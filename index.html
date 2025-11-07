@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="lv">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,7 @@
             background-color: #444;
             padding: 10px;
             border-radius: 5px;
-            width: 300px; /* Adjusted for content */
+            width: 300px;
         }
         
         .menu ul {
@@ -133,7 +133,25 @@
         .car-prices th {
             background-color: #f2f2f2;
         }
-        
+
+        .tech-specs {
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        .tech-specs table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tech-specs td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #eee;
+        }
+
         .car-description {
             margin-top: 20px;
         }
@@ -206,124 +224,150 @@
     </div>
 
     <!-- Body -->
-    <section class="body-section">
-        <!-- First Car -->
-        <div class="car-item">
-            <h2 class="car-title">Volkswagen Beetle</h2>
-            <div class="car-content">
-                <img class="car-image" src="photo/beetle.jpg" alt="Beetle Car">
-                <div class="car-prices">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Dienas</th>
-                                <th>Eur</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1-3</td>
-                                <td>50</td>
-                            </tr>
-                            <tr>
-                                <td>4-7</td>
-                                <td>45</td>
-                            </tr>
-                            <tr>
-                                <td>8+</td>
-                                <td>40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="car-description">
-                <p>Kompakts, taču pārsteidzoši ietilpīgs četrdurvju automobilis, kas apvieno klasisko dizainu ar ikdienas praktiskumu.
-Piemērots līdz 5 pasažieriem, nodrošinot ērtu braucienu gan pilsētā, gan ārpus tās.
-Auto aprīkots ar 1.6 litru benzīna dzinēju un mehānisko ātrumkārbu, kas sniedz dinamisku un ekonomisku braukšanas pieredzi.
-Nelielais bagāžas nodalījums ir ideāli piemērots ikdienas vajadzībām vai nelieliem ceļojumiem.</p>
+<section class="body-section">
+    <!-- First Car -->
+    <div class="car-item">
+        <h2 class="car-title">Volkswagen Beetle</h2>
+        <p class="car-subtitle">2005, 1.6 Benzīns M/T 6.9l/100km</p>
+        <div class="car-content">
+            <img class="car-image" src="photo/beetle.jpg" alt="Beetle Car">
+            <div class="car-prices">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dienas</th>
+                            <th>Eur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>30.00</td>
+                        </tr>
+                        <tr>
+                            <td>2-6</td>
+                            <td>21.00</td>
+                        </tr>
+                        <tr>
+                            <td>7-10</td>
+                            <td>19.00</td>
+                        </tr>
+                        <tr>
+                            <td>11-14</td>
+                            <td>17.00</td>
+                        </tr>
+                        <tr>
+                            <td>15+</td>
+                            <td>15.00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        <div class="car-description">
+            <p>Kompakts, taču pārsteidzoši ietilpīgs četrdurvju automobilis, kas apvieno klasisko dizainu ar ikdienas praktiskumu.
+            Piemērots līdz 5 pasažieriem, nodrošinot ērtu braucienu gan pilsētā, gan ārpus tās.
+            Auto aprīkots ar 1.6 litru benzīna dzinēju un mehānisko ātrumkārbu, kas sniedz dinamisku un ekonomisku braukšanas pieredzi.
+            Nelielais bagāžas nodalījums ir ideāli piemērots ikdienas vajadzībām vai nelieliem ceļojumiem.</p>
+        </div>
+    </div>
 
-        <!-- Second Car -->
-        <div class="car-item">
-            <h2 class="car-title">Volkswagen Beetle Cabriolet</h2>
-            <div class="car-content">
-                <img class="car-image" src="photo/cabrio.jpg" alt="Cabrio Car">
-                <div class="car-prices">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Dienas</th>
-                                <th>Eur</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1-3</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>4-7</td>
-                                <td>55</td>
-                            </tr>
-                            <tr>
-                                <td>8+</td>
-                                <td>50</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="car-description">
-                <p>Elegants un kompakts kabriolets ar izteiktu personību — Volkswagen Beetle Cabriolet apvieno klasisko “vabolītes” dizainu ar mūsdienīgu komfortu un viegluma sajūtu.
-Auto paredzēts līdz četriem pasažieriem, un tā nolaižamais jumts sniedz iespēju izbaudīt brīvību un sauli ik mirkli. Zem pārsega – 1.6 litru benzīna dzinējs un mehāniskā ātrumkārba, kas nodrošina patīkamu un kontrolētu braukšanu gan pilsētā, gan garākos izbraucienos.
-Salons izstrādāts ar rūpību — ērti sēdekļi, kvalitatīvi apdares materiāli un pārdomāts dizains.
-Bagāžas nodalījums piemērots nelielai ceļojumu bagāžai vai ikdienas pirkumiem.
-</p>
+    <!-- Second Car -->
+    <div class="car-item">
+        <h2 class="car-title">Volkswagen Beetle Cabriolet</h2>
+        <p class="car-subtitle">2005, 1.6 Benzīns M/T 7.1l/100km</p>
+        <div class="car-content">
+            <img class="car-image" src="photo/cabrio.jpg" alt="Cabrio Car">
+            <div class="car-prices">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dienas</th>
+                            <th>Eur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>30.00</td>
+                        </tr>
+                        <tr>
+                            <td>2-6</td>
+                            <td>21.00</td>
+                        </tr>
+                        <tr>
+                            <td>7-10</td>
+                            <td>19.00</td>
+                        </tr>
+                        <tr>
+                            <td>11-14</td>
+                            <td>17.00</td>
+                        </tr>
+                        <tr>
+                            <td>15+</td>
+                            <td>15.00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        <div class="car-description">
+            <p>Elegants un kompakts kabriolets ar izteiktu personību — Volkswagen Beetle Cabriolet apvieno klasisko “vabolītes” dizainu ar mūsdienīgu komfortu un viegluma sajūtu.
+            Auto paredzēts līdz četriem pasažieriem, un tā nolaižamais jumts sniedz iespēju izbaudīt brīvību un sauli ik mirkli.
+            Zem pārsega – 1.6 litru benzīna dzinējs un mehāniskā ātrumkārba, kas nodrošina patīkamu un kontrolētu braukšanu gan pilsētā, gan garākos izbraucienos.
+            Salons izstrādāts ar rūpību — ērti sēdekļi, kvalitatīvi apdares materiāli un pārdomāts dizains.
+            Bagāžas nodalījums piemērots nelielai ceļojumu bagāžai vai ikdienas pirkumiem.</p>
+        </div>
+    </div>
 
-        <!-- Third Car -->
-        <div class="car-item">
-            <h2 class="car-title">Citroën C8</h2>
-            <div class="car-content">
-                <img class="car-image" src="photo/c8.jpg" alt="Citro Car">
-                <div class="car-prices">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Dienas</th>
-                                <th>Eur</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1-3</td>
-                                <td>40</td>
-                            </tr>
-                            <tr>
-                                <td>4-7</td>
-                                <td>35</td>
-                            </tr>
-                            <tr>
-                                <td>8+</td>
-                                <td>30</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="car-description">
-                <p>Plašs un komfortabls ģimenes minivens, kas izstrādāts, lai nodrošinātu ērtību un drošību katrā braucienā.
-Citroën C8 piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm vai tiem, kas vēlas vairāk vietas ceļošanai un ikdienas vajadzībām.
-Auto aprīkots ar 1.6 litru benzīna dzinēju un mehānisko ātrumkārbu, kas nodrošina uzticamu un ekonomisku darbību.
-Tā salonā ir plaša vieta kājām un bagāžai, kā arī ērta sēdekļu konfigurācija, kas ļauj viegli pielāgot interjeru pēc vajadzības.
-Mīkstā piekare un klasiski stabila Citroën vadāmība sniedz mierīgu un patīkamu braukšanas pieredzi gan pilsētas satiksmē, gan garos pārbraucienos.
-</p>
+    <!-- Third Car -->
+    <div class="car-item">
+        <h2 class="car-title">Citroën C8</h2>
+        <p class="car-subtitle">2006, 2.0D M/T 8.7l/100km</p>
+        <div class="car-content">
+            <img class="car-image" src="photo/c8.jpg" alt="Citro Car">
+            <div class="car-prices">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dienas</th>
+                            <th>Eur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>30.00</td>
+                        </tr>
+                        <tr>
+                            <td>2-6</td>
+                            <td>21.00</td>
+                        </tr>
+                        <tr>
+                            <td>7-10</td>
+                            <td>19.00</td>
+                        </tr>
+                        <tr>
+                            <td>11-14</td>
+                            <td>17.00</td>
+                        </tr>
+                        <tr>
+                            <td>15+</td>
+                            <td>15.00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </section>
+        <div class="car-description">
+            <p>Plašs un komfortabls ģimenes minivens, kas izstrādāts, lai nodrošinātu ērtību un drošību katrā braucienā.
+            Citroën C8 piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm vai tiem, kas vēlas vairāk vietas ceļošanai un ikdienas vajadzībām.
+            Auto aprīkots ar 2.0 litru dīzeļa dzinēju un mehānisko ātrumkārbu, kas nodrošina uzticamu un ekonomisku darbību.
+            Tā salonā ir plaša vieta kājām un bagāžai, kā arī ērta sēdekļu konfigurācija, kas ļauj viegli pielāgot interjeru pēc vajadzības.
+            Mīkstā piekare un klasiski stabila Citroën vadāmība sniedz mierīgu un patīkamu braukšanas pieredzi gan pilsētas satiksmē, gan garos pārbraucienos.</p>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -342,7 +386,6 @@ Mīkstā piekare un klasiski stabila Citroën vadāmība sniedz mierīgu un pat�
         }
 
         function changeLanguage(lang) {
-            // Here you can implement language change logic, e.g., reload page with lang parameter
             alert('Mainīt valodu uz: ' + lang);
         }
     </script>
