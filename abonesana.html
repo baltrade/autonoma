@@ -64,13 +64,46 @@
         .logo:hover {
             text-decoration: underline;
         }
-        .language-switcher select {
-            background-color: #333;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
+
+
+
+        
+        .language-selector {
+            position: relative;
+            margin-right: 20px; /* Отступ слева от телефона */
         }
+     
+        .language-icon {
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+     
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 0;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+        }
+     
+        .language-dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+     
+        .language-dropdown a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        
         .content {
             padding: 20px;
             background-color: white;
@@ -204,4 +237,5 @@
 </body>
 
 </html>
+
 
