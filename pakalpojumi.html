@@ -90,12 +90,23 @@
         .content li {
             margin-bottom: 10px;
         }
+        /* Footer Styles */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 10px;
         }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a[href^="tel"] {
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .content {
                 margin: 10px;
@@ -139,9 +150,11 @@
         <!-- Pievienojiet vairāk detaļu vai attēlus pēc vajadzības -->
     </section>
     
+     <!-- Footer -->
     <footer>
-        <p>Telefons: +371 25538622 | E-pasts: area51@inbox.lv</p>
+        <p><a href="tel:+37125538622">Telefons: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
     </footer>
+
     
     <script>
         function toggleMenu() {
@@ -153,4 +166,5 @@
         }
     </script>
 </body>
+
 </html>
