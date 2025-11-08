@@ -11,7 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        
+       
         /* Header Styles */
         header {
             background-color: #333;
@@ -21,12 +21,12 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+       
         .hamburger {
             cursor: pointer;
             font-size: 24px;
         }
-        
+       
         .menu {
             display: none;
             position: absolute;
@@ -37,17 +37,17 @@
             border-radius: 5px;
             width: 300px;
         }
-        
+       
         .menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+       
         .menu li {
             margin-bottom: 10px;
         }
-        
+       
         .menu-item-header {
             cursor: pointer;
             font-weight: bold;
@@ -56,7 +56,7 @@
             background-color: #555;
             border-radius: 3px;
         }
-        
+       
         .menu-item-content {
             display: none;
             color: white;
@@ -65,7 +65,7 @@
             border-radius: 3px;
             margin-top: 5px;
         }
-        
+       
         .language-switcher select {
             background-color: #333;
             color: white;
@@ -73,23 +73,23 @@
             font-size: 16px;
             cursor: pointer;
         }
-        
+       
         /* Banner Styles */
         .banner {
             width: 100%;
             height: auto;
         }
-        
+       
         .banner img {
             width: 100%;
             height: auto;
         }
-        
+       
         /* Body Styles */
         .body-section {
             padding: 20px;
         }
-        
+       
         .car-item {
             background-color: white;
             margin-bottom: 40px;
@@ -97,43 +97,42 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+       
         .car-title {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        
+       
         .car-content {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-        
+       
         .car-image {
             width: 50%;
             height: auto;
             margin-right: 20px;
         }
-        
+       
         .car-prices {
             width: 50%;
         }
-        
+       
         .car-prices table {
             width: 100%;
             border-collapse: collapse;
         }
-        
+       
         .car-prices th, .car-prices td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
         }
-        
+       
         .car-prices th {
             background-color: #f2f2f2;
         }
-
         .tech-specs {
             margin-top: 15px;
             border: 1px solid #ddd;
@@ -141,21 +140,18 @@
             padding: 10px;
             background-color: #fafafa;
         }
-
         .tech-specs table {
             width: 100%;
             border-collapse: collapse;
         }
-
         .tech-specs td {
             padding: 6px 8px;
             border-bottom: 1px solid #eee;
         }
-
         .car-description {
             margin-top: 20px;
         }
-        
+       
         /* Footer Styles */
         footer {
             background-color: #333;
@@ -163,22 +159,54 @@
             text-align: center;
             padding: 10px;
         }
-        
+       
         @media (max-width: 768px) {
             .car-content {
                 flex-direction: column;
             }
-            
+           
             .car-image, .car-prices {
                 width: 100%;
                 margin-right: 0;
                 margin-bottom: 20px;
             }
         }
+
+        /* New Subsections Navigation Styles */
+        .subsections {
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .subsections ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .subsections li {
+            margin: 0 15px;
+        }
+
+        .subsections a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .subsections a:hover {
+            background-color: #ddd;
+        }
     </style>
 </head>
 <body>
-
     <!-- Header -->
     <header>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -217,12 +245,18 @@
             </select>
         </div>
     </header>
-
     <!-- Banner -->
     <div class="banner">
         <img src="photo/x.jpg" alt="Banner Image">
     </div>
-
+    <!-- New Subsections Navigation -->
+    <nav class="subsections">
+        <ul>
+            <li><a href="noteikumi.html">Auto nomas noteikumi</a></li>
+            <li><a href="abonesana.html">Auto abonēšana</a></li>
+            <li><a href="pakalpojumi.html">Auto nomas pakalpojumi</a></li>
+        </ul>
+    </nav>
     <!-- Body -->
 <section class="body-section">
     <!-- First Car -->
@@ -262,12 +296,8 @@
                         </tr>
                     </tbody>
                 </table>
-
 <p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
 </div>
-
-
-
             </div>
         </div>
         <div class="car-description">
@@ -276,7 +306,6 @@
            </p>
         </div>
     </div>
-
     <!-- Second Car -->
     <div class="car-item">
         <h2 class="car-title">Volkswagen Beetle Cabriolet</h2>
@@ -314,7 +343,6 @@
                         </tr>
                     </tbody>
                 </table>
-
 <p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
 </div>
             </div>
@@ -322,12 +350,11 @@
         <div class="car-description">
             <p>Elegants un kompakts kabriolets ar izteiktu personību — Volkswagen Beetle Cabriolet apvieno klasisko “vabolītes” dizainu ar mūsdienīgu komfortu un viegluma sajūtu.
             Auto paredzēts līdz četriem pasažieriem, un tā nolaižamais jumts sniedz iespēju izbaudīt brīvību un sauli ik mirkli.
+          
            
-            
         </p>
         </div>
     </div>
-
     <!-- Third Car -->
     <div class="car-item">
         <h2 class="car-title">Citroën C8</h2>
@@ -365,42 +392,35 @@
                         </tr>
                     </tbody>
                 </table>
-
 <p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
 </div>
-
             </div>
         </div>
         <div class="car-description">
             <p>Plašs un komfortabls ģimenes minivens, kas izstrādāts, lai nodrošinātu ērtību un drošību katrā braucienā.
             Citroën C8 piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm.
-           
+          
             Tā salonā ir plaša vieta kājām un bagāžai, kā arī ērta sēdekļu konfigurācija, kas ļauj viegli pielāgot interjeru pēc vajadzības.
            </p>
         </div>
     </div>
 </section>
-
     <!-- Footer -->
     <footer>
         <p>Telefons: +371 25538622 | E-pasts: area51@inbox.lv</p>
     </footer>
-
     <script>
         function toggleMenu() {
             var menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-
         function toggleSubMenu(id) {
             var content = document.getElementById(id);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
-
         function changeLanguage(lang) {
             alert('Mainīt valodu uz: ' + lang);
         }
     </script>
-
 </body>
 </html>
