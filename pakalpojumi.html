@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="lv">
 <head>
     <meta charset="UTF-8">
@@ -65,12 +65,56 @@
         .logo:hover {
             text-decoration: underline;
         }
-        .language-switcher select {
-            background-color: #333;
-            color: white;
-            border: none;
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+    
+        .phone-icon {
+            color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
             font-size: 16px;
+            margin-right: 5px;
+            text-decoration: none;
+        }
+    
+        .phone-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+    
+        .language-selector {
+            position: relative;
+            margin-right: 20px; /* Отступ слева от телефона */
+        }
+    
+        .language-icon {
             cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+    
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 0;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+        }
+    
+        .language-dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+    
+        .language-dropdown a:hover {
+            text-decoration: underline;
         }
         .content {
             padding: 20px;
@@ -98,16 +142,13 @@
             text-align: center;
             padding: 10px;
         }
-
         footer a {
             color: white;
             text-decoration: none;
         }
-
         footer a[href^="tel"] {
             color: white;
         }
-
         @media (max-width: 768px) {
             .content {
                 margin: 10px;
@@ -128,15 +169,21 @@
                 <li><a href="kontakti.html">Kontakti</a></li>
             </ul>
         </div>
-        <div class="language-switcher">
-            <select onchange="changeLanguage(this.value)">
-                <option value="lv">Latviešu</option>
-                <option value="ru">Русский</option>
-                <option value="en">English</option>
-            </select>
+        <div class="header-right">
+            <div class="language-selector">
+                <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
+                <div class="language-dropdown" id="languageDropdown">
+                    <a href="#" onclick="selectLanguage('RUS', 'ru')">RUS</a>
+                    <a href="#" onclick="selectLanguage('ENG', 'en')">ENG</a>
+                    <a href="#" onclick="selectLanguage('LV', 'lv')">LV</a>
+                </div>
+            </div>
+            <a href="tel:+37125538622" class="phone-link">
+                <span class="phone-icon">☎</span> +371 25538622
+            </a>
         </div>
     </header>
-    
+   
     <section class="content">
         <h1>Auto Nomas Pakalpojumi</h1>
         <p>Mēs piedāvājam plašu pakalpojumu klāstu, lai jūsu auto noma būtu ērta un droša. Šeit ir galvenie pakalpojumi:</p>
@@ -150,13 +197,12 @@
         <p>Lai uzzinātu vairāk, sazinieties ar mums!</p>
         <!-- Pievienojiet vairāk detaļu vai attēlus pēc vajadzības -->
     </section>
-    
+   
      <!-- Footer -->
     <footer>
         <p><a href="tel:+37125538622">Telefons: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
     </footer>
-
-    
+   
     <script>
         function toggleMenu() {
             var menu = document.getElementById('menu');
@@ -165,9 +211,15 @@
         function changeLanguage(lang) {
             alert('Mainīt valodu uz: ' + lang);
         }
+        function toggleLanguageDropdown() {
+            var dropdown = document.getElementById('languageDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        function selectLanguage(display, lang) {
+            document.getElementById('currentLanguage').textContent = display;
+            changeLanguage(lang);
+            toggleLanguageDropdown(); // Hide dropdown after selection
+        }
     </script>
 </body>
-
 </html>
-
-
