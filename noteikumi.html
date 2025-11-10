@@ -70,32 +70,32 @@
             display: flex;
             align-items: center;
         }
-    
+   
         .phone-icon {
             color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
             font-size: 16px;
             margin-right: 5px;
             text-decoration: none;
         }
-    
+   
         .phone-link {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
         }
-    
+   
         .language-selector {
             position: relative;
             margin-right: 20px; /* Отступ слева от телефона */
         }
-    
+   
         .language-icon {
             cursor: pointer;
             font-size: 16px;
             color: white;
         }
-    
+   
         .language-dropdown {
             display: none;
             position: absolute;
@@ -106,14 +106,14 @@
             border-radius: 5px;
             width: 100px;
         }
-    
+   
         .language-dropdown a {
             display: block;
             color: white;
             text-decoration: none;
             margin-bottom: 5px;
         }
-    
+   
         .language-dropdown a:hover {
             text-decoration: underline;
         }
@@ -151,6 +151,33 @@
                 margin: 10px;
                 padding: 15px;
             }
+            /* Уменьшение шрифтов и отступов в шапке для мобильной версии */
+            header {
+                padding: 10px 10px; /* Меньше отступов по горизонтали */
+            }
+            .hamburger {
+                font-size: 28px; /* Увеличили до 28px по запросу */
+            }
+            .logo {
+                font-size: 16px; /* Уменьшили с 20px */
+                margin-left: 10px; /* Уменьшили отступ */
+            }
+            .language-selector {
+                margin-right: 10px; /* Уменьшили отступ */
+            }
+            .language-icon {
+                font-size: 14px; /* Уменьшили с 16px */
+            }
+            .phone-icon {
+                font-size: 14px; /* Уменьшили с 16px */
+            }
+            .phone-link {
+                font-size: 14px; /* Уменьшили текст телефона */
+            }
+            /* Дополнительно: Запрет переноса текста */
+            .logo, .phone-link {
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
@@ -180,7 +207,7 @@
             </a>
         </div>
     </header>
-   
+  
     <section class="content">
         <h1>Auto Nomas Noteikumi</h1>
         <p>Šajā sadaļā ir aprakstīti galvenie noteikumi auto nomai. Lūdzu, iepazīstieties ar tiem pirms auto rezervēšanas.</p>
@@ -191,12 +218,12 @@
         <p>5. Soda naudas: Jebkuras soda naudas, kas saņemtas nomas periodā, jāapmaksā nomniekam.</p>
         <!-- Pievienojiet vairāk punktu vai detaļu pēc vajadzības -->
     </section>
-   
+  
       <!-- Footer -->
     <footer>
         <p><a href="tel:+37125538622">Telefons: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
     </footer>
-   
+  
     <script>
         function toggleMenu() {
             var menu = document.getElementById('menu');
