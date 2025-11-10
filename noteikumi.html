@@ -14,7 +14,7 @@
             line-height: 1.2 !important;
         }
 
-          header {
+        header {
             background-color: #333;
             color: white;
             padding: 10px 20px;
@@ -62,7 +62,7 @@
             font-weight: bold;
             color: white;
             text-decoration: none;
-            margin-left: 20px; /* Отступ от гамбургера */
+            margin-left: 20px;
         }
         .logo:hover {
             text-decoration: underline;
@@ -71,32 +71,27 @@
             display: flex;
             align-items: center;
         }
-   
         .phone-icon {
-            color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
+            color: #FF0000;
             font-size: 16px;
             margin-right: 5px;
             text-decoration: none;
         }
-   
         .phone-link {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
         }
-   
         .language-selector {
             position: relative;
-            margin-right: 20px; /* Отступ слева от телефона */
+            margin-right: 20px;
         }
-   
         .language-icon {
             cursor: pointer;
             font-size: 16px;
             color: white;
         }
-   
         .language-dropdown {
             display: none;
             position: absolute;
@@ -107,17 +102,16 @@
             border-radius: 5px;
             width: 100px;
         }
-   
         .language-dropdown a {
             display: block;
             color: white;
             text-decoration: none;
             margin-bottom: 5px;
         }
-   
         .language-dropdown a:hover {
             text-decoration: underline;
         }
+
         .content {
             padding: 20px;
             background-color: white;
@@ -125,15 +119,21 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+
+        /* 🔥 Главное изменение — убираем все отступы */
         .content h1 {
             font-size: 18px;
-            margin-bottom: 18px;
+            margin: 0; /* убираем все внешние отступы */
+            padding: 0; /* убираем внутренние отступы */
+            font-weight: 700;
         }
+
         .content p {
-            margin-bottom: 10px;
-            line-height: 1.2 !important;
+            margin: 0; /* убираем отступы между заголовком и текстом */
+            padding: 0 0 10px 0; /* можно оставить чуть-чуть пространства снизу */
+            line-height: 1.3 !important;
         }
-        /* Footer Styles */
+
         footer {
             background-color: #333;
             color: white;
@@ -147,35 +147,30 @@
         footer a[href^="tel"] {
             color: white;
         }
+
         @media (max-width: 768px) {
             .content {
                 margin: 10px;
                 padding: 15px;
             }
-            /* Уменьшение шрифтов и отступов в шапке для мобильной версии */
             header {
-                padding: 10px 10px; /* Меньше отступов по горизонтали */
+                padding: 10px 10px;
             }
             .hamburger {
-                font-size: 28px; /* Увеличили до 28px по запросу */
+                font-size: 28px;
             }
             .logo {
-                font-size: 16px; /* Уменьшили с 20px */
-                margin-left: 10px; /* Уменьшили отступ */
+                font-size: 16px;
+                margin-left: 10px;
             }
             .language-selector {
-                margin-right: 10px; /* Уменьшили отступ */
+                margin-right: 10px;
             }
-            .language-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
-            .phone-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
+            .language-icon,
+            .phone-icon,
             .phone-link {
-                font-size: 14px; /* Уменьшили текст телефона */
+                font-size: 14px;
             }
-            /* Дополнительно: Запрет переноса текста */
             .logo, .phone-link {
                 white-space: nowrap;
             }
@@ -208,39 +203,47 @@
             </a>
         </div>
     </header>
-  
+
     <section class="content">
-       <h1>Nomas maksa </h1>
-<p>Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.</p>
-<h1>Nomas termiņš </h1>
-<p>Minimālais nomas periods ir 24 stundas.</p>
-<h1>Vecuma ierobežojumi </h1>
-<p>Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam. </p>
-<h1>Personu apliecinošie dokumenti </h1>
-<p>Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma. </p>
-<h1>Norēķini un drošības nauda </h1>
-<p>Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti.
-Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām. </p>
-<h1>Apdrošināšana </h1>
-<p>Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases. </p>
-<h1>Atbildības samazināšana </h1>
-<p>Klientam ir iespēja samazināt savu atbildību par automašīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā. </p>
-<h1>Automašīnas pieņemšana un nodošana </h1>
-<p>Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā. </p>
-<h1>Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana </h1>
-<p>Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automašīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā. </p>
-<h1>Degviela </h1>
-<p>Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru. </p>
-<h1>Teritoriālie ierobežojumi </h1>
-<p>Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti. </p>
-        <!-- Pievienojiet vairāk punktu vai detaļu pēc vajadzības -->
+       <h1>Nomas maksa</h1>
+       <p>Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.</p>
+
+       <h1>Nomas termiņš</h1>
+       <p>Minimālais nomas periods ir 24 stundas.</p>
+
+       <h1>Vecuma ierobežojumi</h1>
+       <p>Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam.</p>
+
+       <h1>Personu apliecinošie dokumenti</h1>
+       <p>Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma.</p>
+
+       <h1>Norēķini un drošības nauda</h1>
+       <p>Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti.
+       Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.</p>
+
+       <h1>Apdrošināšana</h1>
+       <p>Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.</p>
+
+       <h1>Atbildības samazināšana</h1>
+       <p>Klientam ir iespēja samazināt savu atbildību par automašīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.</p>
+
+       <h1>Automašīnas pieņemšana un nodošana</h1>
+       <p>Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā.</p>
+
+       <h1>Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana</h1>
+       <p>Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automašīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā.</p>
+
+       <h1>Degviela</h1>
+       <p>Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.</p>
+
+       <h1>Teritoriālie ierobežojumi</h1>
+       <p>Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti.</p>
     </section>
-  
-      <!-- Footer -->
+
     <footer>
         <p><a href="tel:+37125538622">Telefons: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
     </footer>
-  
+
     <script>
         function toggleMenu() {
             var menu = document.getElementById('menu');
@@ -256,12 +259,8 @@ Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priek�
         function selectLanguage(display, lang) {
             document.getElementById('currentLanguage').textContent = display;
             changeLanguage(lang);
-            toggleLanguageDropdown(); // Hide dropdown after selection
+            toggleLanguageDropdown();
         }
     </script>
 </body>
 </html>
-
-
-
-
