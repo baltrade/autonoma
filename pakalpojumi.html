@@ -1,266 +1,163 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <title>Auto Nomas Pakalpojumi - Auto Rental</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3e3e3;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 20px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 300px;
-        }
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .menu li {
-            margin-bottom: 10px;
-        }
-        .menu a {
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            padding: 5px;
-            background-color: #555;
-            border-radius: 3px;
-            display: block;
-            text-decoration: none;
-        }
-        .menu a:hover {
-            background-color: #666;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            margin-left: 20px; /* Отступ от гамбургера */
-        }
-        .logo:hover {
-            text-decoration: underline;
-        }
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-   
-        .phone-icon {
-            color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
-            font-size: 16px;
-            margin-right: 5px;
-            text-decoration: none;
-        }
-   
-        .phone-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-   
-        .language-selector {
-            position: relative;
-            margin-right: 20px; /* Отступ слева от телефона */
-        }
-   
-        .language-icon {
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-        }
-   
-        .language-dropdown {
-            display: none;
-            position: absolute;
-            top: 25px;
-            right: 0;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100px;
-        }
-   
-        .language-dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
-   
-        .language-dropdown a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            padding: 20px;
-            background-color: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .content h1 {
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-        .content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        .content li {
-            margin-bottom: 10px;
-        }
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-        footer a[href^="tel"] {
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .content {
-                margin: 10px;
-                padding: 15px;
-            }
-            /* Уменьшение шрифтов и отступов в шапке для мобильной версии */
-            header {
-                padding: 10px 10px; /* Меньше отступов по горизонтали */
-            }
-            .hamburger {
-                font-size: 28px; /* Увеличили до 28px по запросу */
-            }
-            .logo {
-                font-size: 20px; /* Уменьшили с 20px */
-                margin-left: 10px; /* Уменьшили отступ */
-            }
-            .language-selector {
-                margin-right: 10px; /* Уменьшили отступ */
-            }
-            .language-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
-            .phone-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
-            .phone-link {
-                font-size: 14px; /* Уменьшили текст телефона */
-            }
-            /* Дополнительно: Запрет переноса текста */
-            .logo, .phone-link {
-                white-space: nowrap;
-
-                 .content h1 {
-        font-size: 16px; 
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<title>Auto Nomas Pakalpojumi - Auto Rental</title>
+<style>
+body { font-family: 'Montserrat', sans-serif; margin:0; padding:0; background-color:#e3e3e3; }
+header { background-color:#333; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+.hamburger { cursor:pointer; font-size:24px; }
+.menu { display:none; position:absolute; top:50px; left:20px; background-color:#444; padding:10px; border-radius:5px; width:300px; }
+.menu ul { list-style:none; padding:0; margin:0; }
+.menu li { margin-bottom:10px; }
+.menu a { cursor:pointer; font-weight:bold; color:white; padding:5px; background-color:#555; border-radius:3px; display:block; text-decoration:none; }
+.menu a:hover { background-color:#666; }
+.logo { font-size:20px; font-weight:bold; color:white; text-decoration:none; margin-left:20px; }
+.logo:hover { text-decoration:underline; }
+.header-right { display:flex; align-items:center; }
+.phone-icon { color:red; font-size:16px; margin-right:5px; }
+.phone-link { color:white; text-decoration:none; display:flex; align-items:center; }
+.language-selector { position:relative; margin-right:20px; }
+.language-icon { cursor:pointer; font-size:16px; color:white; }
+.language-dropdown { display:none; position:absolute; top:25px; right:0; background-color:#444; padding:10px; border-radius:5px; width:100px; }
+.language-dropdown a { display:block; color:white; text-decoration:none; margin-bottom:5px; }
+.language-dropdown a:hover { text-decoration:underline; }
+.content { padding:20px; background-color:white; margin:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+.content h1 { font-size:22px; margin-bottom:20px; }
+.content ul { list-style-type:disc; padding-left:20px; margin-bottom:20px; }
+.content li { margin-bottom:10px; }
+footer { background-color:#333; color:white; text-align:center; padding:10px; }
+footer a { color:white; text-decoration:none; }
+@media (max-width:768px) {
+    .content { margin:10px; padding:15px; }
+    header { padding:10px 10px; }
+    .hamburger { font-size:28px; }
+    .logo { font-size:20px; margin-left:10px; }
+    .language-selector { margin-right:10px; }
+    .language-icon, .phone-icon, .phone-link { font-size:14px; }
+    .logo, .phone-link { white-space:nowrap; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <a href="index.html" class="logo">Car Rent Riga</a>
-        <div class="menu" id="menu">
-            <ul>
-                <li><a href="noteikumi.html">Auto nomas noteikumi</a></li>
-                <li><a href="abonesana.html">Auto abonēšana</a></li>
-                <li><a href="pakalpojumi.html">Auto nomas pakalpojumi</a></li>
-                <li><a href="kontakti.html">Kontakti</a></li>
-            </ul>
-        </div>
-        <div class="header-right">
-            <div class="language-selector">
-                <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
-                <div class="language-dropdown" id="languageDropdown">
-                    <a href="#" onclick="selectLanguage('RUS', 'ru')">RUS</a>
-                    <a href="#" onclick="selectLanguage('ENG', 'en')">ENG</a>
-                    <a href="#" onclick="selectLanguage('LV', 'lv')">LV</a>
-                </div>
-           </div>
-            <a href="tel:+37125538622" class="phone-link">
-                <span class="phone-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </span>
-                +371 25538622
-            </a>
-        </div>
 
-    </header>
-  
-    <section class="content">
-        <h1>Auto nomas pakalpojumi</h1>
-        <p>Mēs piedāvājam plašu pakalpojumu klāstu, lai jūsu auto noma būtu ērta un droša. Šeit ir galvenie pakalpojumi:</p>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo">Car Rent Riga</a>
+    <div class="menu" id="menu">
         <ul>
-            <li>Īstermiņa noma: Ideāli pilsētas braucieniem vai īsiem ceļojumiem.</li>
-            <li>Ilgtermiņa noma: Izmantojiet auto mēnešiem vai gadiem ar izdevīgām cenām.</li>
-            <li>Papildu aprīkojums: GPS, bērnu sēdeklīši, jumta bagāžnieki pieejami par papildu maksu.</li>
-            <li>Piegāde un savākšana: Auto varam piegādāt uz jūsu adresi vai lidostu.</li>
-            <li>24/7 atbalsts: Tehniskā palīdzība un konsultācijas jebkurā laikā.</li>
+            <li><a href="noteikumi.html" data-key="menu_rules">Auto nomas noteikumi</a></li>
+            <li><a href="abonesana.html" data-key="menu_subscription">Auto abonēšana</a></li>
+            <li><a href="pakalpojumi.html" data-key="menu_services">Auto nomas pakalpojumi</a></li>
+            <li><a href="kontakti.html" data-key="menu_contacts">Kontakti</a></li>
         </ul>
-        <p>Lai uzzinātu vairāk, sazinieties ar mums!</p>
-        <!-- Pievienojiet vairāk detaļu vai attēlus pēc vajadzības -->
-    </section>
-  
-     <!-- Footer -->
-    <footer>
-        <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
-    </footer>
-  
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        function changeLanguage(lang) {
-            alert('Mainīt valodu uz: ' + lang);
-        }
-        function toggleLanguageDropdown() {
-            var dropdown = document.getElementById('languageDropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-        function selectLanguage(display, lang) {
-            document.getElementById('currentLanguage').textContent = display;
-            changeLanguage(lang);
-            toggleLanguageDropdown(); // Hide dropdown after selection
-        }
-    </script>
+    </div>
+    <div class="header-right">
+        <div class="language-selector">
+            <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
+            <div class="language-dropdown" id="languageDropdown">
+                <a href="#" onclick="selectLanguage('LV')">LV</a>
+                <a href="#" onclick="selectLanguage('RU')">RU</a>
+                <a href="#" onclick="selectLanguage('EN')">EN</a>
+            </div>
+        </div>
+        <a href="tel:+37125538622" class="phone-link">
+            <span class="phone-icon">📞</span> +371 25538622
+        </a>
+    </div>
+</header>
+
+<section class="content">
+    <h1 data-key="services_title">Auto nomas pakalpojumi</h1>
+    <p data-key="services_intro">Mēs piedāvājam plašu pakalpojumu klāstu, lai jūsu auto noma būtu ērta un droša. Šeit ir galvenie pakalpojumi:</p>
+    <ul>
+        <li data-key="services_short">Īstermiņa noma: Ideāli pilsētas braucieniem vai īsiem ceļojumiem.</li>
+        <li data-key="services_long">Ilgtermiņa noma: Izmantojiet auto mēnešiem vai gadiem ar izdevīgām cenām.</li>
+        <li data-key="services_equipment">Papildu aprīkojums: GPS, bērnu sēdeklīši, jumta bagāžnieki pieejami par papildu maksu.</li>
+        <li data-key="services_delivery">Piegāde un savākšana: Auto varam piegādāt uz jūsu adresi vai lidostu.</li>
+        <li data-key="services_support">24/7 atbalsts: Tehniskā palīdzība un konsultācijas jebkurā laikā.</li>
+    </ul>
+    <p data-key="services_contact">Lai uzzinātu vairāk, sazinieties ar mums!</p>
+</section>
+
+<footer>
+    <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
+</footer>
+
+<script>
+const translations = {
+    LV: {
+        menu_rules: "Auto nomas noteikumi",
+        menu_subscription: "Auto abonēšana",
+        menu_services: "Auto nomas pakalpojumi",
+        menu_contacts: "Kontakti",
+        services_title: "Auto nomas pakalpojumi",
+        services_intro: "Mēs piedāvājam plašu pakalpojumu klāstu, lai jūsu auto noma būtu ērta un droša. Šeit ir galvenie pakalpojumi:",
+        services_short: "Īstermiņa noma: Ideāli pilsētas braucieniem vai īsiem ceļojumiem.",
+        services_long: "Ilgtermiņa noma: Izmantojiet auto mēnešiem vai gadiem ar izdevīgām cenām.",
+        services_equipment: "Papildu aprīkojums: GPS, bērnu sēdeklīši, jumta bagāžnieki pieejami par papildu maksu.",
+        services_delivery: "Piegāde un savākšana: Auto varam piegādāt uz jūsu adresi vai lidostu.",
+        services_support: "24/7 atbalsts: Tehniskā palīdzība un konsultācijas jebkurā laikā.",
+        services_contact: "Lai uzzinātu vairāk, sazinieties ar mums!"
+    },
+    RU: {
+        menu_rules: "Правила аренды авто",
+        menu_subscription: "Подписка на авто",
+        menu_services: "Услуги аренды авто",
+        menu_contacts: "Контакты",
+        services_title: "Услуги аренды авто",
+        services_intro: "Мы предлагаем широкий спектр услуг, чтобы аренда автомобиля была удобной и безопасной. Основные услуги:",
+        services_short: "Краткосрочная аренда: Идеально для поездок по городу или коротких путешествий.",
+        services_long: "Долгосрочная аренда: Используйте автомобиль месяцами или годами по выгодным ценам.",
+        services_equipment: "Дополнительное оборудование: GPS, детские кресла, багажники на крышу доступны за дополнительную плату.",
+        services_delivery: "Доставка и возврат: Мы можем доставить автомобиль по вашему адресу или в аэропорт.",
+        services_support: "Поддержка 24/7: Техническая помощь и консультации в любое время.",
+        services_contact: "Чтобы узнать больше, свяжитесь с нами!"
+    },
+    EN: {
+        menu_rules: "Car Rental Rules",
+        menu_subscription: "Car Subscription",
+        menu_services: "Car Rental Services",
+        menu_contacts: "Contacts",
+        services_title: "Car Rental Services",
+        services_intro: "We offer a wide range of services to make your car rental convenient and safe. Here are the main services:",
+        services_short: "Short-term rental: Perfect for city drives or short trips.",
+        services_long: "Long-term rental: Use the car for months or years at favorable rates.",
+        services_equipment: "Additional equipment: GPS, child seats, roof racks available for an extra fee.",
+        services_delivery: "Delivery and pickup: We can deliver the car to your address or the airport.",
+        services_support: "24/7 support: Technical assistance and consultation at any time.",
+        services_contact: "To learn more, contact us!"
+    }
+};
+
+function updateTranslations(lang){
+    document.querySelectorAll('[data-key]').forEach(el=>{
+        const key = el.getAttribute('data-key');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+}
+
+function toggleMenu(){
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display==='block'?'none':'block';
+}
+
+function toggleLanguageDropdown(){
+    const dropdown = document.getElementById('languageDropdown');
+    dropdown.style.display = dropdown.style.display==='block'?'none':'block';
+}
+
+function selectLanguage(lang){
+    document.getElementById('currentLanguage').textContent = lang;
+    updateTranslations(lang);
+    toggleLanguageDropdown();
+}
+
+// Инициализация по умолчанию
+updateTranslations('LV');
+</script>
+
 </body>
 </html>
-
-
-
-
-
