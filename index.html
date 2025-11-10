@@ -71,7 +71,7 @@
         }
      
         .phone-icon {
-            color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
+            color: #FF0000;
             font-size: 16px;
             margin-right: 5px;
             text-decoration: none;
@@ -86,7 +86,7 @@
      
         .language-selector {
             position: relative;
-            margin-right: 20px; /* Отступ слева от телефона */
+            margin-right: 20px;
         }
      
         .language-icon {
@@ -231,9 +231,6 @@
                 margin-bottom: 20px;
             }
 
-           
-             
-            
             .site-title {
                 font-size: 24px;
                 margin: 10px 0; /* уменьшили отступ */
@@ -244,15 +241,28 @@
             }
 
             .car-item {
-                padding: 10px 10px 5px 10px;
-                margin-bottom: 20px; /* уменьшили расстояние между карточками */
+                padding: 10px 10px 5px 10px; /* уменьшили нижний отступ */
+                margin-bottom: 20px;
             }
 
             .car-description {
-                margin-top: 10px; /* уменьшили отступ внутри описания */
+                margin-top: 10px;
+            }
+
+            /* убираем лишний отступ внизу карточки */
+            .car-item p:last-child {
+                margin-bottom: 0;
+            }
+
+            .car-prices {
+                margin-bottom: 0;
+            }
+
+            .security-deposit {
+                margin-bottom: 0;
+                padding-bottom: 0;
             }
         }
-
     </style>
 </head>
 <body>
@@ -331,9 +341,7 @@
 </div>
             </div>
         </div>
-        <div class="car-description">
-           
-        </div>
+        <div class="car-description"></div>
     </div>
     <!-- Second Car -->
     <div class="car-item">
@@ -377,17 +385,14 @@
 </div>
             </div>
         </div>
-        <div class="car-description">
-           
-        </div>
+        <div class="car-description"></div>
     </div>
     <!-- Third Car -->
     <div class="car-item">
         <h2 class="car-title">Citroën C8</h2>
         <p class="car-subtitle">2006, 2.0D M/T 8.7l/100km</p>
 <p class="car-subtitle">Plašs un komfortabls ģimenes minivens ar manuālo pārnesumkārbu. Piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm.
-Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī elastīgu sēdekļu konfigurāciju, kas ļauj viegli pielāgot interjeru atbilstoši jūsu vajadzībām.
-</p>
+Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī elastīgu sēdekļu konfigurāciju, kas ļauj viegli pielāgot interjeru atbilstoši jūsu vajadzībām.</p>
         <div class="car-content">
             <img class="car-image" src="photo/c8.jpg" alt="Citro Car">
             <div class="car-prices">
@@ -425,9 +430,7 @@ Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī el
 </div>
             </div>
         </div>
-        <div class="car-description">
-           
-        </div>
+        <div class="car-description"></div>
     </div>
 </section>
     <!-- Footer -->
@@ -449,10 +452,8 @@ Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī el
         function selectLanguage(display, lang) {
             document.getElementById('currentLanguage').textContent = display;
             changeLanguage(lang);
-            toggleLanguageDropdown(); // Hide dropdown after selection
+            toggleLanguageDropdown();
         }
     </script>
 </body>
 </html>
-
-
