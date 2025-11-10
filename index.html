@@ -1,468 +1,480 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Rental</title>
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e3e3e3;
+    }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Rental</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3e3e3;
-        }
-     
-        /* Header Styles */
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-     
-        .hamburger {
-            cursor: pointer;
-            font-size: 36px;
-        }
-     
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 20px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 300px;
-        }
-     
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-     
-        .menu li {
-            margin-bottom: 10px;
-        }
-     
-        .menu a {
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            padding: 5px;
-            background-color: #555;
-            border-radius: 3px;
-            display: block;
-            text-decoration: none;
-        }
-     
-        .menu a:hover {
-            background-color: #666;
-        }
-     
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-     
-        .phone-icon {
-            color: #FF0000;
-            font-size: 16px;
-            margin-right: 5px;
-            text-decoration: none;
-        }
-     
-        .phone-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-     
-        .language-selector {
-            position: relative;
-            margin-right: 20px;
-        }
-     
-        .language-icon {
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-        }
-     
-        .language-dropdown {
-            display: none;
-            position: absolute;
-            top: 25px;
-            right: 0;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100px;
-        }
-     
-        .language-dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
-     
-        .language-dropdown a:hover {
-            text-decoration: underline;
-        }
-     
-        /* Banner Styles */
-        .banner {
-            width: 100%;
-            height: auto;
-        }
-     
-        .banner img {
-            width: 100%;
-            height: auto;
-        }
-     
-        /* Title after banner */
-        .site-title {
-            text-align: center;
-            font-size: 32px;
-            margin: 20px 0;
-            color: #333;
-        }
-     
-        /* Body Styles */
-        .body-section {
-            padding: 20px;
-        }
-     
-        .car-item {
-            background-color: white;
-            margin-bottom: 40px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-     
-        .car-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-     
+    /* Header Styles */
+    header {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        font-size: 36px;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        z-index: 10;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu a {
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        padding: 5px;
+        background-color: #555;
+        border-radius: 3px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .menu a:hover {
+        background-color: #666;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .phone-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: red;
+        margin-right: 6px;
+    }
+
+    .phone-link {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .language-selector {
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .language-icon {
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+    }
+
+    .language-dropdown {
+        display: none;
+        position: absolute;
+        top: 25px;
+        right: 0;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100px;
+        z-index: 10;
+    }
+
+    .language-dropdown a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+
+    .language-dropdown a:hover {
+        text-decoration: underline;
+    }
+
+    /* Banner Styles */
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .site-title {
+        text-align: center;
+        font-size: 32px;
+        margin: 20px 0;
+        color: #333;
+    }
+
+    .body-section {
+        padding: 20px;
+    }
+
+    .car-item {
+        background-color: white;
+        margin-bottom: 40px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .car-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .car-content {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .car-image {
+        width: 50%;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .car-prices {
+        width: 50%;
+    }
+
+    .car-prices table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .car-prices th, .car-prices td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .car-prices th {
+        background-color: #f2f2f2;
+    }
+
+    .tech-specs {
+        margin-top: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fafafa;
+    }
+
+    .tech-specs table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tech-specs td {
+        padding: 6px 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .car-description {
+        margin-top: 20px;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+    footer a[href^="tel"] {
+        color: white;
+    }
+
+    @media (max-width: 768px) {
         .car-content {
-            display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .car-image, .car-prices {
+            width: 100%;
+            margin-right: 0;
             margin-bottom: 20px;
         }
-     
-        .car-image {
-            width: 50%;
-            height: auto;
-            margin-right: 20px;
+
+        .site-title {
+            font-size: 24px;
+            margin: 10px 0;
         }
-     
-        .car-prices {
-            width: 50%;
-        }
-     
-        .car-prices table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-     
-        .car-prices th, .car-prices td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-     
-        .car-prices th {
-            background-color: #f2f2f2;
-        }
-        .tech-specs {
-            margin-top: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+
+        .body-section {
             padding: 10px;
-            background-color: #fafafa;
         }
-        .tech-specs table {
-            width: 100%;
-            border-collapse: collapse;
+
+        .car-item {
+            padding: 10px 10px 5px 10px;
+            margin-bottom: 20px;
         }
-        .tech-specs td {
-            padding: 6px 8px;
-            border-bottom: 1px solid #eee;
-        }
+
         .car-description {
-            margin-top: 20px;
-        }
-     
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+            margin-top: 10px;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
+        .car-item p:last-child {
+            margin-bottom: 0;
         }
 
-        footer a[href^="tel"] {
-            color: white;
+        .car-prices {
+            margin-bottom: 0;
         }
-     
-        @media (max-width: 768px) {
-            .car-content {
-                flex-direction: column;
-            }
-         
-            .car-image, .car-prices {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
 
-            .site-title {
-                font-size: 24px;
-                margin: 10px 0; /* уменьшили отступ */
-            }
-
-            .body-section {
-                padding: 10px; /* уменьшили внутренние отступы */
-            }
-
-            .car-item {
-                padding: 10px 10px 5px 10px; /* уменьшили нижний отступ */
-                margin-bottom: 20px;
-            }
-
-            .car-description {
-                margin-top: 10px;
-            }
-
-            /* убираем лишний отступ внизу карточки */
-            .car-item p:last-child {
-                margin-bottom: 0;
-            }
-
-            .car-prices {
-                margin-bottom: 0;
-            }
-
-            .security-deposit {
-                margin-bottom: 0;
-                padding-bottom: 0;
-            }
+        .security-deposit {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-    </style>
+    }
+
+    .hidden { display: none; }
+
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <div class="menu" id="menu">
-            <ul>
-                <li><a href="noteikumi.html">Auto nomas noteikumi</a></li>
-                <li><a href="abonesana.html">Auto abonēšana</a></li>
-                <li><a href="pakalpojumi.html">Auto nomas pakalpojumi</a></li>
-                <li><a href="kontakti.html">Kontakti</a></li>
-            </ul>
-        </div>
-        <div class="header-right">
-            <div class="language-selector">
-                <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
-                <div class="language-dropdown" id="languageDropdown">
-                    <a href="#" onclick="selectLanguage('RUS', 'ru')">RUS</a>
-                    <a href="#" onclick="selectLanguage('ENG', 'en')">ENG</a>
-                    <a href="#" onclick="selectLanguage('LV', 'lv')">LV</a>
-                </div>
-           </div>
-            <a href="tel:+37125538622" class="phone-link">
-                <span class="phone-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </span>
-                +371 25538622
-            </a>
-        </div>
-
-    </header>
-    <!-- Banner -->
-    <div class="banner">
-        <img src="photo/x.jpg" alt="Banner Image">
+<header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="noteikumi.html" data-key="menu_rules">Auto nomas noteikumi</a></li>
+            <li><a href="abonesana.html" data-key="menu_subscription">Auto abonēšana</a></li>
+            <li><a href="pakalpojumi.html" data-key="menu_services">Auto nomas pakalpojumi</a></li>
+            <li><a href="kontakti.html" data-key="menu_contacts">Kontakti</a></li>
+        </ul>
     </div>
-    <!-- Site Title -->
-    <h1 class="site-title">Mūsu autoparks</h1>
-    <!-- Body -->
+    <div class="header-right">
+        <div class="language-selector">
+            <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
+            <div class="language-dropdown" id="languageDropdown">
+                <a href="#" onclick="selectLanguage('LV')">LV</a>
+                <a href="#" onclick="selectLanguage('RU')">RU</a>
+                <a href="#" onclick="selectLanguage('EN')">EN</a>
+            </div>
+        </div>
+        <a href="tel:+37125538622" class="phone-link">
+            <span class="phone-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </span>
+            +371 25538622
+        </a>
+    </div>
+</header>
+
+<div class="banner">
+    <img src="photo/x.jpg" alt="Banner Image">
+</div>
+
+<h1 class="site-title" data-key="title_fleet">Mūsu autoparks</h1>
+
 <section class="body-section">
-    <!-- First Car -->
-    <div class="car-item">
-        <h2 class="car-title">Volkswagen Beetle</h2>
-        <p class="car-subtitle">2005, 1.6 Benzīns M/T 6.9l/100km</p>
-<p class="car-subtitle">Stilīgs un uzticams pilsētas auto ar 4 durvīm un manuālo pārnesumkārbu. Ērts un ietilpīgs, ar zemu degvielas patēriņu. Lieliski piemērots braucieniem pa pilsētu vai izbraucieniem ārpus tās.</p>
+    <!-- Car Items -->
+    <div class="car-item" data-car="beetle">
+        <h2 class="car-title" data-key="beetle_title">Volkswagen Beetle</h2>
+        <p class="car-subtitle" data-key="beetle_specs">2005, 1.6 Benzīns M/T 6.9l/100km</p>
+        <p class="car-subtitle" data-key="beetle_desc">Stilīgs un uzticams pilsētas auto ar 4 durvīm un manuālo pārnesumkārbu. Ērts un ietilpīgs, ar zemu degvielas patēriņu. Lieliski piemērots braucieniem pa pilsētu vai izbraucieniem ārpus tās.</p>
         <div class="car-content">
             <img class="car-image" src="photo/beetle.jpg" alt="Beetle Car">
             <div class="car-prices">
                 <table>
                     <thead>
                         <tr>
-                            <th>Dienas</th>
-                            <th>Eur</th>
+                            <th data-key="table_days">Dienas</th>
+                            <th data-key="table_eur">Eur</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>30.00</td>
-                        </tr>
-                        <tr>
-                            <td>2-6</td>
-                            <td>21.00</td>
-                        </tr>
-                        <tr>
-                            <td>7-10</td>
-                            <td>19.00</td>
-                        </tr>
-                        <tr>
-                            <td>11-14</td>
-                            <td>17.00</td>
-                        </tr>
-                        <tr>
-                            <td>15+</td>
-                            <td>15.00</td>
-                        </tr>
+                        <tr><td>1</td><td>30.00</td></tr>
+                        <tr><td>2-6</td><td>21.00</td></tr>
+                        <tr><td>7-10</td><td>19.00</td></tr>
+                        <tr><td>11-14</td><td>17.00</td></tr>
+                        <tr><td>15+</td><td>15.00</td></tr>
                     </tbody>
                 </table>
-<p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
-</div>
+                <p class="security-deposit" data-key="security_deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
             </div>
         </div>
-        <div class="car-description"></div>
     </div>
-    <!-- Second Car -->
-    <div class="car-item">
-        <h2 class="car-title">Volkswagen Beetle Cabriolet</h2>
-        <p class="car-subtitle">2005, 1.6 Benzīns M/T 7.1l/100km</p>
- <p class="car-subtitle">Stilīgs un uzticams auto ar 2 durvīm un automātisko pārnesumkārbu. Apvieno kabrioleta brīvības sajūtu ar kupē eleganci. Ērts, ietilpīgs un ekonomisks – ideāli piemērots gan pilsētas braucieniem, gan izbraucieniem brīvā dabā.</p>
+
+    <div class="car-item" data-car="cabrio">
+        <h2 class="car-title" data-key="cabrio_title">Volkswagen Beetle Cabriolet</h2>
+        <p class="car-subtitle" data-key="cabrio_specs">2005, 1.6 Benzīns M/T 7.1l/100km</p>
+        <p class="car-subtitle" data-key="cabrio_desc">Stilīgs un uzticams auto ar 2 durvīm un automātisko pārnesumkārbu. Apvieno kabrioleta brīvības sajūtu ar kupē eleganci. Ērts, ietilpīgs un ekonomisks – ideāli piemērots gan pilsētas braucieniem, gan izbraucieniem brīvā dabā.</p>
         <div class="car-content">
             <img class="car-image" src="photo/cabrio.jpg" alt="Cabrio Car">
             <div class="car-prices">
                 <table>
                     <thead>
                         <tr>
-                            <th>Dienas</th>
-                            <th>Eur</th>
+                            <th data-key="table_days">Dienas</th>
+                            <th data-key="table_eur">Eur</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>30.00</td>
-                        </tr>
-                        <tr>
-                            <td>2-6</td>
-                            <td>21.00</td>
-                        </tr>
-                        <tr>
-                            <td>7-10</td>
-                            <td>19.00</td>
-                        </tr>
-                        <tr>
-                            <td>11-14</td>
-                            <td>17.00</td>
-                        </tr>
-                        <tr>
-                            <td>15+</td>
-                            <td>15.00</td>
-                        </tr>
+                        <tr><td>1</td><td>30.00</td></tr>
+                        <tr><td>2-6</td><td>21.00</td></tr>
+                        <tr><td>7-10</td><td>19.00</td></tr>
+                        <tr><td>11-14</td><td>17.00</td></tr>
+                        <tr><td>15+</td><td>15.00</td></tr>
                     </tbody>
                 </table>
-<p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
-</div>
+                <p class="security-deposit" data-key="security_deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
             </div>
         </div>
-        <div class="car-description"></div>
     </div>
-    <!-- Third Car -->
-    <div class="car-item">
-        <h2 class="car-title">Citroën C8</h2>
-        <p class="car-subtitle">2006, 2.0D M/T 8.7l/100km</p>
-<p class="car-subtitle">Plašs un komfortabls ģimenes minivens ar manuālo pārnesumkārbu. Piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm.
-Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī elastīgu sēdekļu konfigurāciju, kas ļauj viegli pielāgot interjeru atbilstoši jūsu vajadzībām.</p>
+
+    <div class="car-item" data-car="c8">
+        <h2 class="car-title" data-key="c8_title">Citroën C8</h2>
+        <p class="car-subtitle" data-key="c8_specs">2006, 2.0D M/T 8.7l/100km</p>
+        <p class="car-subtitle" data-key="c8_desc">Plašs un komfortabls ģimenes minivens ar manuālo pārnesumkārbu. Piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm. Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī elastīgu sēdekļu konfigurāciju, kas ļauj viegli pielāgot interjeru atbilstoši jūsu vajadzībām.</p>
         <div class="car-content">
             <img class="car-image" src="photo/c8.jpg" alt="Citro Car">
             <div class="car-prices">
                 <table>
                     <thead>
                         <tr>
-                            <th>Dienas</th>
-                            <th>Eur</th>
+                            <th data-key="table_days">Dienas</th>
+                            <th data-key="table_eur">Eur</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>30.00</td>
-                        </tr>
-                        <tr>
-                            <td>2-6</td>
-                            <td>21.00</td>
-                        </tr>
-                        <tr>
-                            <td>7-10</td>
-                            <td>19.00</td>
-                        </tr>
-                        <tr>
-                            <td>11-14</td>
-                            <td>17.00</td>
-                        </tr>
-                        <tr>
-                            <td>15+</td>
-                            <td>15.00</td>
-                        </tr>
+                        <tr><td>1</td><td>30.00</td></tr>
+                        <tr><td>2-6</td><td>21.00</td></tr>
+                        <tr><td>7-10</td><td>19.00</td></tr>
+                        <tr><td>11-14</td><td>17.00</td></tr>
+                        <tr><td>15+</td><td>15.00</td></tr>
                     </tbody>
                 </table>
-<p class="security-deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
-</div>
+                <p class="security-deposit" data-key="security_deposit">Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto.</p>
             </div>
         </div>
-        <div class="car-description"></div>
     </div>
 </section>
-    <!-- Footer -->
-    <footer>
-        <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        function changeLanguage(lang) {
-            alert('Mainīt valodu uz: ' + lang);
-        }
-        function toggleLanguageDropdown() {
-            var dropdown = document.getElementById('languageDropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-        function selectLanguage(display, lang) {
-            document.getElementById('currentLanguage').textContent = display;
-            changeLanguage(lang);
-            toggleLanguageDropdown();
-        }
-    </script>
+
+<footer>
+    <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
+</footer>
+
+<script>
+const translations = {
+    LV: {
+        menu_rules: "Auto nomas noteikumi",
+        menu_subscription: "Auto abonēšana",
+        menu_services: "Auto nomas pakalpojumi",
+        menu_contacts: "Kontakti",
+        title_fleet: "Mūsu autoparks",
+        table_days: "Dienas",
+        table_eur: "Eur",
+        security_deposit: "Drošības nauda 200€, kas tiek rezervēta uz kredītkartes saņemot auto",
+        beetle_title: "Volkswagen Beetle",
+        beetle_specs: "2005, 1.6 Benzīns M/T 6.9l/100km",
+        beetle_desc: "Stilīgs un uzticams pilsētas auto ar 4 durvīm un manuālo pārnesumkārbu. Ērts un ietilpīgs, ar zemu degvielas patēriņu. Lieliski piemērots braucieniem pa pilsētu vai izbraucieniem ārpus tās.",
+        cabrio_title: "Volkswagen Beetle Cabriolet",
+        cabrio_specs: "2005, 1.6 Benzīns M/T 7.1l/100km",
+        cabrio_desc: "Stilīgs un uzticams auto ar 2 durvīm un automātisko pārnesumkārbu. Apvieno kabrioleta brīvības sajūtu ar kupē eleganci. Ērts, ietilpīgs un ekonomisks – ideāli piemērots gan pilsētas braucieniem, gan izbraucieniem brīvā dabā.",
+        c8_title: "Citroën C8",
+        c8_specs: "2006, 2.0D M/T 8.7l/100km",
+        c8_desc: "Plašs un komfortabls ģimenes minivens ar manuālo pārnesumkārbu. Piedāvā septiņas sēdvietas, tāpēc tas ir ideāli piemērots lielākām ģimenēm. Salons ir ietilpīgs un ērts, ar daudz vietas kājām un bagāžai, kā arī elastīgu sēdekļu konfigurāciju, kas ļauj viegli pielāgot interjeru atbilstoši jūsu vajadzībām."
+    },
+    RU: {
+        menu_rules: "Правила аренды авто",
+        menu_subscription: "Подписка на авто",
+        menu_services: "Услуги аренды авто",
+        menu_contacts: "Контакты",
+        title_fleet: "Наш автопарк",
+        table_days: "Дни",
+        table_eur: "Евро",
+        security_deposit: "Залог 200€, резервируется на кредитной карте при получении авто",
+        beetle_title: "Volkswagen Beetle",
+        beetle_specs: "2005, 1.6 Бензин М/Т 6.9л/100км",
+        beetle_desc: "Стильный и надёжный городской автомобиль с 4 дверями и механической коробкой передач. Удобный и вместительный, с низким расходом топлива. Отлично подходит для поездок по городу или за город.",
+        cabrio_title: "Volkswagen Beetle Кабриолет",
+        cabrio_specs: "2005, 1.6 Бензин М/Т 7.1л/100км",
+        cabrio_desc: "Стильный и надёжный автомобиль с 2 дверями и автоматической коробкой передач. Объединяет свободу кабриолета с элегантностью купе. Удобный, вместительный и экономичный – идеально для городских поездок и выездов на природу.",
+        c8_title: "Citroën C8",
+        c8_specs: "2006, 2.0D М/Т 8.7л/100км",
+        c8_desc: "Просторный и комфортный семейный минивэн с механической коробкой передач. Предлагает семь мест, идеально для больших семей. Салон просторный и удобный, много места для ног и багажа, а также гибкая конфигурация сидений для легкой адаптации под ваши нужды."
+    },
+    EN: {
+        menu_rules: "Car Rental Rules",
+        menu_subscription: "Car Subscription",
+        menu_services: "Car Rental Services",
+        menu_contacts: "Contacts",
+        title_fleet: "Our Fleet",
+        table_days: "Days",
+        table_eur: "Eur",
+        security_deposit: "Security deposit 200€, reserved on credit card upon car pickup",
+        beetle_title: "Volkswagen Beetle",
+        beetle_specs: "2005, 1.6 Petrol M/T 6.9l/100km",
+        beetle_desc: "Stylish and reliable city car with 4 doors and manual transmission. Comfortable and spacious with low fuel consumption. Perfect for city driving or short trips outside.",
+        cabrio_title: "Volkswagen Beetle Cabriolet",
+        cabrio_specs: "2005, 1.6 Petrol M/T 7.1l/100km",
+        cabrio_desc: "Stylish and reliable 2-door car with automatic transmission. Combines cabriolet freedom with coupe elegance. Comfortable, spacious, and economical – perfect for both city driving and outdoor trips.",
+        c8_title: "Citroën C8",
+        c8_specs: "2006, 2.0D M/T 8.7l/100km",
+        c8_desc: "Spacious and comfortable family minivan with manual transmission. Offers seven seats, ideal for larger families. Cabin is spacious and comfortable, with lots of room for legs and luggage, and flexible seat configuration for easy adjustment."
+    }
+};
+
+function updateTranslations(lang) {
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleLanguageDropdown() {
+    const dropdown = document.getElementById('languageDropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function selectLanguage(lang) {
+    document.getElementById('currentLanguage').textContent = lang;
+    updateTranslations(lang);
+    toggleLanguageDropdown();
+}
+
+// Инициализация по умолчанию
+updateTranslations('LV');
+</script>
 </body>
 </html>
-
-
-
