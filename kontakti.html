@@ -1,262 +1,278 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <title>Kontakti - Auto Rental</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3e3e3;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<title>Kontakti - Auto Rental</title>
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e3e3e3;
+    }
+    header {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hamburger {
+        cursor: pointer;
+        font-size: 24px;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+    }
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu li {
+        margin-bottom: 10px;
+    }
+    .menu a {
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        padding: 5px;
+        background-color: #555;
+        border-radius: 3px;
+        display: block;
+        text-decoration: none;
+    }
+    .menu a:hover {
+        background-color: #666;
+    }
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+    .logo:hover {
+        text-decoration: underline;
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+    .phone-icon {
+        color: #FF0000;
+        font-size: 16px;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+    .phone-link {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    .language-selector {
+        position: relative;
+        margin-right: 20px;
+    }
+    .language-icon {
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+    }
+    .language-dropdown {
+        display: none;
+        position: absolute;
+        top: 25px;
+        right: 0;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100px;
+    }
+    .language-dropdown a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+    .language-dropdown a:hover {
+        text-decoration: underline;
+    }
+    .content {
+        padding: 20px;
+        background-color: white;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .content h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+    footer a[href^="tel"] {
+        color: white;
+    }
+    @media (max-width: 768px) {
+        .content {
+            margin: 10px;
+            padding: 15px;
         }
         header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px 10px;
         }
         .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 20px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 300px;
-        }
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .menu li {
-            margin-bottom: 10px;
-        }
-        .menu a {
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            padding: 5px;
-            background-color: #555;
-            border-radius: 3px;
-            display: block;
-            text-decoration: none;
-        }
-        .menu a:hover {
-            background-color: #666;
+            font-size: 28px;
         }
         .logo {
             font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            margin-left: 20px; /* Отступ от гамбургера */
+            margin-left: 10px;
         }
-        .logo:hover {
-            text-decoration: underline;
-        }
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-   
-        .phone-icon {
-            color: #FF0000; /* Красный цвет, как авто на баннере (предполагаем) */
-            font-size: 16px;
-            margin-right: 5px;
-            text-decoration: none;
-        }
-   
-        .phone-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-   
         .language-selector {
-            position: relative;
-            margin-right: 20px; /* Отступ слева от телефона */
+            margin-right: 10px;
         }
-   
-        .language-icon {
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
+        .language-icon, .phone-icon, .phone-link {
+            font-size: 14px;
         }
-   
-        .language-dropdown {
-            display: none;
-            position: absolute;
-            top: 25px;
-            right: 0;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100px;
-        }
-   
-        .language-dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
-   
-        .language-dropdown a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            padding: 20px;
-            background-color: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .logo, .phone-link {
+            white-space: nowrap;
         }
         .content h1 {
             font-size: 22px;
-            margin-bottom: 20px;
         }
-        .content p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-       /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-        footer a[href^="tel"] {
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .content {
-                margin: 10px;
-                padding: 15px;
-            }
-            /* Уменьшение шрифтов и отступов в шапке для мобильной версии */
-            header {
-                padding: 10px 10px; /* Меньше отступов по горизонтали */
-            }
-            .hamburger {
-                font-size: 28px; /* Уменьшили с 24px */
-            }
-            .logo {
-                font-size: 20px; /* Уменьшили с 20px */
-                margin-left: 10px; /* Уменьшили отступ */
-            }
-            .language-selector {
-                margin-right: 10px; /* Уменьшили отступ */
-            }
-            .language-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
-            .phone-icon {
-                font-size: 14px; /* Уменьшили с 16px */
-            }
-            .phone-link {
-                font-size: 14px; /* Уменьшили текст телефона */
-            }
-            /* Дополнительно: Запрет переноса текста */
-            .logo, .phone-link {
-                white-space: nowrap;
-            }
-            .content h1 {
-    font-size: 22px; /* или 20px — выбери по вкусу */
-}
-
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <header>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <a href="index.html" class="logo">Car Rent Riga</a>
-        <div class="menu" id="menu">
-            <ul>
-                <li><a href="noteikumi.html">Auto nomas noteikumi</a></li>
-                <li><a href="abonesana.html">Auto abonēšana</a></li>
-                <li><a href="pakalpojumi.html">Auto nomas pakalpojumi</a></li>
-                <li><a href="kontakti.html">Kontakti</a></li>
-            </ul>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo">Car Rent Riga</a>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="noteikumi.html" data-key="menu_rules">Auto nomas noteikumi</a></li>
+            <li><a href="abonesana.html" data-key="menu_subscription">Auto abonēšana</a></li>
+            <li><a href="pakalpojumi.html" data-key="menu_services">Auto nomas pakalpojumi</a></li>
+            <li><a href="kontakti.html" data-key="menu_contacts">Kontakti</a></li>
+        </ul>
+    </div>
+    <div class="header-right">
+        <div class="language-selector">
+            <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
+            <div class="language-dropdown" id="languageDropdown">
+                <a href="#" onclick="selectLanguage('LV')">LV</a>
+                <a href="#" onclick="selectLanguage('RU')">RU</a>
+                <a href="#" onclick="selectLanguage('EN')">EN</a>
+            </div>
         </div>
-        <div class="header-right">
-            <div class="language-selector">
-                <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
-                <div class="language-dropdown" id="languageDropdown">
-                    <a href="#" onclick="selectLanguage('RUS', 'ru')">RUS</a>
-                    <a href="#" onclick="selectLanguage('ENG', 'en')">ENG</a>
-                    <a href="#" onclick="selectLanguage('LV', 'lv')">LV</a>
-                 </div>
-           </div>
-            <a href="tel:+37125538622" class="phone-link">
-                <span class="phone-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </span>
-                +371 25538622
-            </a>
-        </div>
+        <a href="tel:+37125538622" class="phone-link">
+            <span class="phone-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </span>
+            +371 25538622
+        </a>
+    </div>
+</header>
 
-    </header>
-  
-    <section class="content">
-        <h1>Kontakti</h1>
-        <p>Sazinieties ar mums, lai saņemtu vairāk informācijas vai rezervētu auto.</p>
-        <p>Telefons: +371 25538622</p>
-        <p>E-pasts: area51@inbox.lv</p>
-        <p>Adrese: Bruņinieku 92, Rīga, LV-1065</p>
-        <!-- Pievienojiet vairāk detaļu, piemēram, karti vai kontaktformu, pēc vajadzības -->
-    </section>
-  
-     <!-- Footer -->
-    <footer>
-        <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
-    </footer>
-  
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        function changeLanguage(lang) {
-            alert('Mainīt valodu uz: ' + lang);
-        }
-        function toggleLanguageDropdown() {
-            var dropdown = document.getElementById('languageDropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-        function selectLanguage(display, lang) {
-            document.getElementById('currentLanguage').textContent = display;
-            changeLanguage(lang);
-            toggleLanguageDropdown(); // Hide dropdown after selection
-        }
-    </script>
+<section class="content">
+    <h1 data-key="title_contacts">Kontakti</h1>
+    <p data-key="contact_text">Sazinieties ar mums, lai saņemtu vairāk informācijas vai rezervētu auto.</p>
+    <p data-key="contact_phone">Telefons: +371 25538622</p>
+    <p data-key="contact_email">E-pasts: area51@inbox.lv</p>
+    <p data-key="contact_address">Adrese: Bruņinieku 92, Rīga, LV-1065</p>
+</section>
+
+<footer>
+    <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
+</footer>
+
+<script>
+const translations = {
+    LV: {
+        menu_rules: "Auto nomas noteikumi",
+        menu_subscription: "Auto abonēšana",
+        menu_services: "Auto nomas pakalpojumi",
+        menu_contacts: "Kontakti",
+        title_contacts: "Kontakti",
+        contact_text: "Sazinieties ar mums, lai saņemtu vairāk informācijas vai rezervētu auto.",
+        contact_phone: "Telefons: +371 25538622",
+        contact_email: "E-pasts: area51@inbox.lv",
+        contact_address: "Adrese: Bruņinieku 92, Rīga, LV-1065"
+    },
+    RU: {
+        menu_rules: "Правила аренды авто",
+        menu_subscription: "Подписка на авто",
+        menu_services: "Услуги аренды авто",
+        menu_contacts: "Контакты",
+        title_contacts: "Контакты",
+        contact_text: "Свяжитесь с нами, чтобы получить дополнительную информацию или забронировать авто.",
+        contact_phone: "Телефон: +371 25538622",
+        contact_email: "Эл. почта: area51@inbox.lv",
+        contact_address: "Адрес: Bruņinieku 92, Рига, LV-1065"
+    },
+    EN: {
+        menu_rules: "Car Rental Rules",
+        menu_subscription: "Car Subscription",
+        menu_services: "Car Rental Services",
+        menu_contacts: "Contacts",
+        title_contacts: "Contacts",
+        contact_text: "Contact us for more information or to book a car.",
+        contact_phone: "Phone: +371 25538622",
+        contact_email: "Email: area51@inbox.lv",
+        contact_address: "Address: Bruņinieku 92, Riga, LV-1065"
+    }
+};
+
+function updateTranslations(lang) {
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleLanguageDropdown() {
+    const dropdown = document.getElementById('languageDropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function selectLanguage(lang) {
+    document.getElementById('currentLanguage').textContent = lang;
+    updateTranslations(lang);
+    toggleLanguageDropdown();
+}
+
+// Инициализация по умолчанию
+updateTranslations('LV');
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
