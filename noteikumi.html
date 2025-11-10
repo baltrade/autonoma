@@ -1,277 +1,248 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <title>Auto Nomas Noteikumi - Auto Rental</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3e3e3;
-            line-height: 1.2 !important;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .hamburger {
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 20px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 300px;
-        }
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .menu li {
-            margin-bottom: 10px;
-        }
-        .menu a {
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            padding: 5px;
-            background-color: #555;
-            border-radius: 3px;
-            display: block;
-            text-decoration: none;
-        }
-        .menu a:hover {
-            background-color: #666;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .logo:hover {
-            text-decoration: underline;
-        }
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
-        .phone-icon {
-            color: #FF0000;
-            font-size: 16px;
-            margin-right: 5px;
-            text-decoration: none;
-        }
-        .phone-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .language-selector {
-            position: relative;
-            margin-right: 20px;
-        }
-        .language-icon {
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-        }
-        .language-dropdown {
-            display: none;
-            position: absolute;
-            top: 25px;
-            right: 0;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100px;
-        }
-        .language-dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
-        .language-dropdown a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            padding: 20px;
-            background-color: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        /* 🔥 Главное изменение — убираем все отступы */
-        .content h1 {
-            font-size: 18px;
-            margin: 0; /* убираем все внешние отступы */
-            padding: 0; /* убираем внутренние отступы */
-            font-weight: 700;
-        }
-
-        .content p {
-            margin: 0; /* убираем отступы между заголовком и текстом */
-            padding: 0 0 10px 0; /* можно оставить чуть-чуть пространства снизу */
-            line-height: 1.3 !important;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-        footer a[href^="tel"] {
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                margin: 10px;
-                padding: 15px;
-            }
-            header {
-                padding: 10px 10px;
-            }
-            .hamburger {
-                font-size: 28px;
-            }
-            .logo {
-                font-size: 20px;
-                margin-left: 10px;
-            }
-            .language-selector {
-                margin-right: 10px;
-            }
-            .language-icon,
-            .phone-icon,
-            .phone-link {
-                font-size: 14px;
-            }
-            .logo, .phone-link {
-                white-space: nowrap;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<title>Auto Nomas Noteikumi - Auto Rental</title>
+<style>
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e3e3e3;
+    line-height: 1.2 !important;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburger { cursor: pointer; font-size: 24px; }
+.menu { display: none; position: absolute; top: 50px; left: 20px; background-color: #444; padding: 10px; border-radius: 5px; width: 300px; }
+.menu ul { list-style: none; padding: 0; margin: 0; }
+.menu li { margin-bottom: 10px; }
+.menu a { cursor: pointer; font-weight: bold; color: white; padding: 5px; background-color: #555; border-radius: 3px; display: block; text-decoration: none; }
+.menu a:hover { background-color: #666; }
+.logo { font-size: 20px; font-weight: bold; color: white; text-decoration: none; margin-left: 20px; }
+.logo:hover { text-decoration: underline; }
+.header-right { display: flex; align-items: center; }
+.phone-icon { color: #FF0000; font-size: 16px; margin-right: 5px; text-decoration: none; }
+.phone-link { color: white; text-decoration: none; display: flex; align-items: center; }
+.language-selector { position: relative; margin-right: 20px; }
+.language-icon { cursor: pointer; font-size: 16px; color: white; }
+.language-dropdown { display: none; position: absolute; top: 25px; right: 0; background-color: #444; padding: 10px; border-radius: 5px; width: 100px; }
+.language-dropdown a { display: block; color: white; text-decoration: none; margin-bottom: 5px; }
+.language-dropdown a:hover { text-decoration: underline; }
+.content { padding: 20px; background-color: white; margin: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.content h1, .content h2 { margin: 0; padding: 0; font-weight: 700; }
+.content h1 { font-size: 18px; }
+.content p { margin: 0; padding: 0 0 10px 0; line-height: 1.3 !important; }
+footer { background-color: #333; color: white; text-align: center; padding: 10px; }
+footer a { color: white; text-decoration: none; }
+@media (max-width: 768px) {
+    .content { margin: 10px; padding: 15px; }
+    header { padding: 10px 10px; }
+    .hamburger { font-size: 28px; }
+    .logo { font-size: 20px; margin-left: 10px; }
+    .language-selector { margin-right: 10px; }
+    .language-icon, .phone-icon, .phone-link { font-size: 14px; }
+    .logo, .phone-link { white-space: nowrap; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <a href="index.html" class="logo">Car Rent Riga</a>
-        <div class="menu" id="menu">
-            <ul>
-                <li><a href="noteikumi.html">Auto nomas noteikumi</a></li>
-                <li><a href="abonesana.html">Auto abonēšana</a></li>
-                <li><a href="pakalpojumi.html">Auto nomas pakalpojumi</a></li>
-                <li><a href="kontakti.html">Kontakti</a></li>
-            </ul>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo">Car Rent Riga</a>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="noteikumi.html" data-key="menu_rules">Auto nomas noteikumi</a></li>
+            <li><a href="abonesana.html" data-key="menu_subscription">Auto abonēšana</a></li>
+            <li><a href="pakalpojumi.html" data-key="menu_services">Auto nomas pakalpojumi</a></li>
+            <li><a href="kontakti.html" data-key="menu_contacts">Kontakti</a></li>
+        </ul>
+    </div>
+    <div class="header-right">
+        <div class="language-selector">
+            <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
+            <div class="language-dropdown" id="languageDropdown">
+                <a href="#" onclick="selectLanguage('LV')">LV</a>
+                <a href="#" onclick="selectLanguage('RU')">RU</a>
+                <a href="#" onclick="selectLanguage('EN')">EN</a>
+            </div>
         </div>
-        <div class="header-right">
-            <div class="language-selector">
-                <span class="language-icon" id="currentLanguage" onclick="toggleLanguageDropdown()">LV</span>
-                <div class="language-dropdown" id="languageDropdown">
-                    <a href="#" onclick="selectLanguage('RUS', 'ru')">RUS</a>
-                    <a href="#" onclick="selectLanguage('ENG', 'en')">ENG</a>
-                    <a href="#" onclick="selectLanguage('LV', 'lv')">LV</a>
-                </div>
-           </div>
-            <a href="tel:+37125538622" class="phone-link">
-                <span class="phone-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </span>
-                +371 25538622
-            </a>
-        </div>
+        <a href="tel:+37125538622" class="phone-link">
+            <span class="phone-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h3a2 2 0 0 1 2 1.72c.12.81.37 1.61.72 2.36a2 2 0 0 1-.45 2.11L6 9a16 16 0 0 0 9 9l.81-.27a2 2 0 0 1 2.11.45c.75.35 1.55.6 2.36.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </span>
+            +371 25538622
+        </a>
+    </div>
+</header>
 
-    </header>
+<section class="content">
+    <h2 data-key="rules_title">Auto nomas noteikumi</h2>
 
-    <section class="content">
-      <h2>Auto nomas noteikumi</h2>
-       <h1>Nomas maksa</h1>
-       <p>Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.</p>
+    <h1 data-key="rule_payment">Nomas maksa</h1>
+    <p data-key="rule_payment_text">Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.</p>
 
-       <h1>Nomas termiņš</h1>
-       <p>Minimālais nomas periods ir 24 stundas.</p>
+    <h1 data-key="rule_duration">Nomas termiņš</h1>
+    <p data-key="rule_duration_text">Minimālais nomas periods ir 24 stundas.</p>
 
-       <h1>Vecuma ierobežojumi</h1>
-       <p>Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam.</p>
+    <h1 data-key="rule_age">Vecuma ierobežojumi</h1>
+    <p data-key="rule_age_text">Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam.</p>
 
-       <h1>Personu apliecinošie dokumenti</h1>
-       <p>Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma.</p>
+    <h1 data-key="rule_documents">Personu apliecinošie dokumenti</h1>
+    <p data-key="rule_documents_text">Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma.</p>
 
-       <h1>Norēķini un drošības nauda</h1>
-       <p>Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti.
-       Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.</p>
+    <h1 data-key="rule_payment_security">Norēķini un drošības nauda</h1>
+    <p data-key="rule_payment_security_text">Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti. Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.</p>
 
-       <h1>Apdrošināšana</h1>
-       <p>Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.</p>
+    <h1 data-key="rule_insurance">Apdrošināšana</h1>
+    <p data-key="rule_insurance_text">Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.</p>
 
-       <h1>Atbildības samazināšana</h1>
-       <p>Klientam ir iespēja samazināt savu atbildību par automašīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.</p>
+    <h1 data-key="rule_liability">Atbildības samazināšana</h1>
+    <p data-key="rule_liability_text">Klientam ir iespēja samazināt savu atbildību par automašīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.</p>
 
-       <h1>Automašīnas pieņemšana un nodošana</h1>
-       <p>Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā.</p>
+    <h1 data-key="rule_pickup">Automašīnas pieņemšana un nodošana</h1>
+    <p data-key="rule_pickup_text">Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā.</p>
 
-       <h1>Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana</h1>
-       <p>Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automašīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā.</p>
+    <h1 data-key="rule_admin">Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana</h1>
+    <p data-key="rule_admin_text">Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automašīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā.</p>
 
-       <h1>Degviela</h1>
-       <p>Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.</p>
+    <h1 data-key="rule_fuel">Degviela</h1>
+    <p data-key="rule_fuel_text">Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.</p>
 
-       <h1>Teritoriālie ierobežojumi</h1>
-       <p>Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti.</p>
-    </section>
+    <h1 data-key="rule_territory">Teritoriālie ierobežojumi</h1>
+    <p data-key="rule_territory_text">Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti.</p>
+</section>
 
-    <footer>
-        <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
-    </footer>
+<footer>
+    <p><a href="tel:+37125538622">Tālrunis: +371 25538622</a> | E-pasts: area51@inbox.lv</p>
+</footer>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-        function changeLanguage(lang) {
-            alert('Mainīt valodu uz: ' + lang);
-        }
-        function toggleLanguageDropdown() {
-            var dropdown = document.getElementById('languageDropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-        function selectLanguage(display, lang) {
-            document.getElementById('currentLanguage').textContent = display;
-            changeLanguage(lang);
-            toggleLanguageDropdown();
-        }
-    </script>
+<script>
+const translations = {
+    LV: {
+        menu_rules: "Auto nomas noteikumi",
+        menu_subscription: "Auto abonēšana",
+        menu_services: "Auto nomas pakalpojumi",
+        menu_contacts: "Kontakti",
+        rules_title: "Auto nomas noteikumi",
+        rule_payment: "Nomas maksa",
+        rule_payment_text: "Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.",
+        rule_duration: "Nomas termiņš",
+        rule_duration_text: "Minimālais nomas periods ir 24 stundas.",
+        rule_age: "Vecuma ierobežojumi",
+        rule_age_text: "Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam.",
+        rule_documents: "Personu apliecinošie dokumenti",
+        rule_documents_text: "Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma.",
+        rule_payment_security: "Norēķini un drošības nauda",
+        rule_payment_security_text: "Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti. Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.",
+        rule_insurance: "Apdrošināšana",
+        rule_insurance_text: "Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.",
+        rule_liability: "Atbildības samazināšana",
+        rule_liability_text: "Klientam ir iespēja samazināt savu atbildību par automašīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.",
+        rule_pickup: "Automašīnas pieņemšana un nodošana",
+        rule_pickup_text: "Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā.",
+        rule_admin: "Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana",
+        rule_admin_text: "Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automašīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā.",
+        rule_fuel: "Degviela",
+        rule_fuel_text: "Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.",
+        rule_territory: "Teritoriālie ierobežojumi",
+        rule_territory_text: "Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti."
+    },
+    RU: {
+        menu_rules: "Правила аренды авто",
+        menu_subscription: "Подписка на авто",
+        menu_services: "Услуги аренды авто",
+        menu_contacts: "Контакты",
+        rules_title: "Правила аренды авто",
+        rule_payment: "Арендная плата",
+        rule_payment_text: "Арендная плата рассчитывается за 24-часовой период. Она может быть уменьшена или увеличена в зависимости от длительности аренды и конкретных условий.",
+        rule_duration: "Срок аренды",
+        rule_duration_text: "Минимальный срок аренды — 24 часа.",
+        rule_age: "Возрастные ограничения",
+        rule_age_text: "Арендатор должен быть не младше 21 года.",
+        rule_documents: "Документы",
+        rule_documents_text: "Арендатор должен предоставить действующий паспорт и водительское удостоверение соответствующей категории, выданное не менее двух лет назад.",
+        rule_payment_security: "Платежи и залог",
+        rule_payment_security_text: "Оплата аренды и внесение залога осуществляется до получения автомобиля. Оплата возможна наличными, переводом или кредитной картой. Размер залога определяется индивидуально и блокируется на начало аренды, разблокируется через 14 дней после окончания аренды.",
+        rule_insurance: "Страхование",
+        rule_insurance_text: "Все автомобили застрахованы от повреждений (LDW), кражи и грабежа (THW), а также имеют действующую полис ОСАГО. Минимальный размер франшизы (залог) составляет от 300€ до 400€, в зависимости от класса транспортного средства.",
+        rule_liability: "Снижение ответственности",
+        rule_liability_text: "Клиент может уменьшить свою ответственность за ущерб автомобилю до 0€. Для этого применяется дополнительная плата, определённая в соответствии с правилами аренды, но не менее 20€ в день.",
+        rule_pickup: "Получение и возврат авто",
+        rule_pickup_text: "Автомобиль можно получить и вернуть в Риге, по адресу Bruņinieku 92. По договоренности и за дополнительную плату возможна выдача или возврат в другом месте или времени.",
+        rule_admin: "Административные нарушения и потеря документов/ключей",
+        rule_admin_text: "Клиент полностью ответственен за все нарушения ПДД во время аренды. В случае потери документов или ключей автомобиля применяется компенсация в размере 100€.",
+        rule_fuel: "Топливо",
+        rule_fuel_text: "Автомобиль передаётся с полным баком и должен быть возвращён с полным баком. Если бак не полный, взимается плата 2€ за каждый недостающий литр.",
+        rule_territory: "Территориальные ограничения",
+        rule_territory_text: "Автомобиль можно использовать на территории Латвии. Выезд за пределы Латвии и ЕС возможен только с предварительного согласия арендодателя и взимается дополнительная плата от 7€ до 10€ в сутки."
+    },
+    EN: {
+        menu_rules: "Car Rental Rules",
+        menu_subscription: "Car Subscription",
+        menu_services: "Car Rental Services",
+        menu_contacts: "Contacts",
+        rules_title: "Car Rental Rules",
+        rule_payment: "Rental Fee",
+        rule_payment_text: "The rental fee is calculated per 24-hour period. It may be reduced or increased depending on the rental duration and specific conditions.",
+        rule_duration: "Rental Period",
+        rule_duration_text: "The minimum rental period is 24 hours.",
+        rule_age: "Age Restrictions",
+        rule_age_text: "The driver must be at least 21 years old.",
+        rule_documents: "Documents",
+        rule_documents_text: "The renter must present a valid passport and a driver’s license of the appropriate category issued at least two years prior to the rental start date.",
+        rule_payment_security: "Payments and Security Deposit",
+        rule_payment_security_text: "Rental payment and security deposit are made before the car is handed over. Payment can be made in cash, transfer, or credit card. The security deposit amount is set individually and is held at the start of the rental and released 14 days after the rental ends.",
+        rule_insurance: "Insurance",
+        rule_insurance_text: "All cars are insured against damage (LDW), theft and robbery (THW), and have a valid third-party liability policy (OCTA). The minimum deductible (security deposit) is between €300 and €400 depending on the vehicle class.",
+        rule_liability: "Liability Reduction",
+        rule_liability_text: "Clients can reduce their liability for car damage to €0. An additional fee applies, as specified in the rental rules, but not less than €20 per day.",
+        rule_pickup: "Car Pickup and Return",
+        rule_pickup_text: "Cars can be picked up and returned in Riga, Bruņinieku 92. By agreement and for an additional fee, pickup or return at another location or time is possible.",
+        rule_admin: "Traffic Violations and Lost Documents/Keys",
+        rule_admin_text: "The client is fully responsible for all traffic violations during the rental. Losing the car documents or keys incurs a €100 fee.",
+        rule_fuel: "Fuel",
+        rule_fuel_text: "The car is delivered with a full fuel tank and must be returned full. If the tank is not full, a fee of €2 per missing liter applies.",
+        rule_territory: "Territorial Restrictions",
+        rule_territory_text: "The car may be used within Latvia. Traveling outside Latvia and the EU is only possible with prior consent from the rental company and incurs an additional fee of €7 to €10 per day."
+    }
+};
+
+function updateTranslations(lang) {
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleLanguageDropdown() {
+    const dropdown = document.getElementById('languageDropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function selectLanguage(lang) {
+    document.getElementById('currentLanguage').textContent = lang;
+    updateTranslations(lang);
+    toggleLanguageDropdown();
+}
+
+// Инициализация по умолчанию
+updateTranslations('LV');
+</script>
 </body>
 </html>
-
-
-
-
