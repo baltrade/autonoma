@@ -13,21 +13,18 @@ body {
     background-color: #e3e3e3;
     line-height: 1.2 !important;
 }
-
 /* --- Увеличенный отступ между h2 и первым h1 --- */
 .content h2 {
     font-size: 24px;
     margin-bottom: 20px; /* большее расстояние между h2 и h1 */
-    
+   
 }
-
 .content h1 {
     font-size: 18px;
     margin-top: 8px;
     margin-bottom: 4px;
-    
+   
 }
-
 header {
     background-color: #333;
     color: white;
@@ -62,15 +59,12 @@ header {
     text-align: justify; /* 🔥 выравнивание текста по ширине */
     text-justify: inter-word; /* улучшает равномерность пробелов */
 }
-
-
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
 }
-
 .footer-contacts {
     display: flex;
     justify-content: center;
@@ -79,7 +73,6 @@ footer {
     gap: 20px; /* расстояние между элементами */
     margin: 0;
 }
-
 .footer-link {
     display: flex;
     align-items: center;
@@ -87,18 +80,15 @@ footer {
     color: white;
     font-size: 16px;
 }
-
 .footer-link:hover {
     text-decoration: underline;
 }
-
 .footer-icon svg {
     width: 22px;
     height: 22px;
     margin-right: 6px;
     vertical-align: middle;
 }
-
 @media (max-width: 768px) {
     .content { margin: 10px; padding: 15px; }
     header { padding: 10px 10px; }
@@ -141,44 +131,31 @@ footer {
         </a>
     </div>
 </header>
-
 <section class="content">
     <h2 data-key="rules_title">Auto nomas noteikumi</h2>
-
     <h1 data-key="rule_payment">Nomas maksa</h1>
     <p data-key="rule_payment_text">Nomas maksa tiek aprēķināta par 24 stundu periodu. Tā var tikt samazināta vai palielināta atkarībā no nomas ilguma un konkrētajiem nosacījumiem.</p>
-
     <h1 data-key="rule_duration">Nomas termiņš</h1>
     <p data-key="rule_duration_text">Minimālais nomas periods ir 24 stundas.</p>
-
     <h1 data-key="rule_age">Vecuma ierobežojumi</h1>
     <p data-key="rule_age_text">Automašīnas nomniekam jeb vadītājam jābūt vismaz 21 gadu vecam.</p>
-
     <h1 data-key="rule_documents">Personu apliecinošie dokumenti</h1>
     <p data-key="rule_documents_text">Nomniekam jāuzrāda derīga pase un atbilstošas kategorijas vadītāja apliecība, kas izdota vismaz divus gadus pirms nomas sākuma.</p>
-
     <h1 data-key="rule_payment_security">Norēķini un drošības nauda</h1>
     <p data-key="rule_payment_security_text">Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti. Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.</p>
-
     <h1 data-key="rule_insurance">Apdrošināšana</h1>
     <p data-key="rule_insurance_text">Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.</p>
-
     <h1 data-key="rule_liability">Atbildības samazināšana</h1>
     <p data-key="rule_liability_text">Klientam ir iespēja samazināt savu atbildību par automаšīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.</p>
-
     <h1 data-key="rule_pickup">Automašīnas pieņemšana un nodošana</h1>
     <p data-key="rule_pickup_text">Automašīnu var saņemt un nodot Rīgā, Bruņinieku 92. Pēc vienošanās un par papildu maksu iespējama nodošana vai pieņemšana citā vietā vai laikā.</p>
-
     <h1 data-key="rule_admin">Administratīvie pārkāpumi un dokumentu/atslēgu nozaudēšana</h1>
     <p data-key="rule_admin_text">Klients ir pilnībā atbildīgs par visiem ceļu satiksmes noteikumu pārkāpumiem, kas veikti nomas laikā. Nozaudējot automаšīnas dokumentus vai atslēgas, tiek piemērota kompensācija 100€ apmērā.</p>
-
     <h1 data-key="rule_fuel">Degviela</h1>
     <p data-key="rule_fuel_text">Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.</p>
-
     <h1 data-key="rule_territory">Teritoriālie ierobežojumi</h1>
     <p data-key="rule_territory_text">Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti.</p>
 </section>
-
 <footer>
     <p class="footer-contacts">
         <a href="tel:+37125538622" class="footer-link">
@@ -199,10 +176,10 @@ footer {
         </a>
     </p>
 </footer>
-
 <script>
 const translations = {
     LV: {
+        page_title: "Auto nomas noteikumi",
         menu_rules: "Auto nomas noteikumi",
         menu_subscription: "Auto abonēšana",
         menu_services: "Auto nomas pakalpojumi",
@@ -219,7 +196,7 @@ const translations = {
         rule_payment_security: "Norēķini un drošības nauda",
         rule_payment_security_text: "Norēķins par nomu un drošības naudas iemaksa tiek veikta pirms automašīnas izsniegšanas. Maksājumu iespējams veikt skaidrā naudā, ar pārskaitījumu vai kredītkarti. Drošības naudas apmērs tiek noteikts individuāli. Tā tiek ieturēta (priekšautorizēta) nomas sākumā un atbloķēta 14 dienu laikā pēc nomas beigām.",
         rule_insurance: "Apdrošināšana",
-        rule_insurance_text: "Visas automаšīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.",
+        rule_insurance_text: "Visas automašīnas ir apdrošinātas pret bojājumiem (LDW), zādzību un laupīšanu (THW), kā arī tām ir spēkā OCTA polise. Minimālais pašriska (drošības naudas) apmērs ir no 300€ līdz 400€, atkarībā no transportlīdzekļa klases.",
         rule_liability: "Atbildības samazināšana",
         rule_liability_text: "Klientam ir iespēja samazināt savu atbildību par automаšīnai nodarītajiem bojājumiem līdz 0€. Šim nolūkam tiek piemērota papildus samaksa, kas noteikta saskaņā ar nomas noteikumiem, bet ne mazāka par 20€ dienā.",
         rule_pickup: "Automašīnas pieņemšana un nodošana",
@@ -230,25 +207,91 @@ const translations = {
         rule_fuel_text: "Automašīna tiek nodota ar pilnu degvielas tvertni, un arī jāatgriež ar pilnu. Ja tvertne nav pilna, tiek piemērota maksa 2€ par katru trūkstošo litru.",
         rule_territory: "Teritoriālie ierobežojumi",
         rule_territory_text: "Automašīnu drīkst izmantot Latvijas teritorijā. Izbraukšana ārpus Latvijas, Eiropas Savienības robežās, ir iespējama tikai ar iepriekšēju iznomātāja piekrišanu un tiek piemērota papildus maksa no 7€ līdz 10€ par diennakti."
+    },
+    RU: {
+        page_title: "Правила аренды автомобиля",
+        menu_rules: "Правила аренды автомобиля",
+        menu_subscription: "Абонемент на автомобиль",
+        menu_services: "Услуги аренды автомобиля",
+        menu_contacts: "Контакты",
+        rules_title: "Правила аренды автомобиля",
+        rule_payment: "Арендная плата",
+        rule_payment_text: "Арендная плата рассчитывается за 24-часовой период. Она может быть уменьшена или увеличена в зависимости от длительности аренды и конкретных условий.",
+        rule_duration: "Срок аренды",
+        rule_duration_text: "Минимальный период аренды - 24 часа.",
+        rule_age: "Возрастные ограничения",
+        rule_age_text: "Арендатору или водителю автомобиля должно быть не менее 21 года.",
+        rule_documents: "Документы, удостоверяющие личность",
+        rule_documents_text: "Арендатор должен предъявить действительный паспорт и водительское удостоверение соответствующей категории, выданное не менее двух лет до начала аренды.",
+        rule_payment_security: "Расчеты и залог",
+        rule_payment_security_text: "Оплата за аренду и внесение залога производятся до выдачи автомобиля. Оплату можно произвести наличными, переводом или кредитной картой. Сумма залога определяется индивидуально. Она удерживается (предавторизуется) в начале аренды и разблокируется в течение 14 дней после окончания аренды.",
+        rule_insurance: "Страхование",
+        rule_insurance_text: "Все автомобили застрахованы от повреждений (LDW), кражи и угона (THW), а также имеют действующий полис ОСАГО. Минимальная сумма франшизы (залога) составляет от 300€ до 400€, в зависимости от класса транспортного средства.",
+        rule_liability: "Снижение ответственности",
+        rule_liability_text: "Клиент имеет возможность снизить свою ответственность за повреждения автомобиля до 0€. Для этого применяется дополнительная оплата, установленная в соответствии с правилами аренды, но не менее 20€ в день.",
+        rule_pickup: "Прием и сдача автомобиля",
+        rule_pickup_text: "Автомобиль можно получить и сдать в Риге, по адресу Бруниниеку 92. По договоренности и за дополнительную плату возможна сдача или прием в другом месте или времени.",
+        rule_admin: "Административные нарушения и потеря документов/ключей",
+        rule_admin_text: "Клиент полностью ответственен за все нарушения правил дорожного движения, совершенные во время аренды. В случае потери документов или ключей от автомобиля применяется компенсация в размере 100€.",
+        rule_fuel: "Топливо",
+        rule_fuel_text: "Автомобиль выдается с полным баком топлива и должен быть возвращен с полным. Если бак не полный, применяется плата 2€ за каждый недостающий литр.",
+        rule_territory: "Территориальные ограничения",
+        rule_territory_text: "Автомобиль разрешается использовать на территории Латвии. Выезд за пределы Латвии, в пределах Европейского Союза, возможен только с предварительного согласия арендодателя и применяется дополнительная плата от 7€ до 10€ за сутки."
+    },
+    EN: {
+        page_title: "Car Rental Rules",
+        menu_rules: "Car Rental Rules",
+        menu_subscription: "Car Subscription",
+        menu_services: "Car Rental Services",
+        menu_contacts: "Contacts",
+        rules_title: "Car Rental Rules",
+        rule_payment: "Rental Fee",
+        rule_payment_text: "The rental fee is calculated for a 24-hour period. It can be reduced or increased depending on the rental duration and specific conditions.",
+        rule_duration: "Rental Term",
+        rule_duration_text: "The minimum rental period is 24 hours.",
+        rule_age: "Age Restrictions",
+        rule_age_text: "The car renter or driver must be at least 21 years old.",
+        rule_documents: "Identity Documents",
+        rule_documents_text: "The renter must present a valid passport and a corresponding category driver's license issued at least two years before the start of the rental.",
+        rule_payment_security: "Payments and Security Deposit",
+        rule_payment_security_text: "Payment for the rental and the security deposit are made before the car is issued. Payment can be made in cash, by transfer, or by credit card. The security deposit amount is determined individually. It is withheld (pre-authorized) at the start of the rental and unblocked within 14 days after the end of the rental.",
+        rule_insurance: "Insurance",
+        rule_insurance_text: "All cars are insured against damage (LDW), theft and robbery (THW), and also have a valid OCTA policy. The minimum deductible (security deposit) amount is from 300€ to 400€, depending on the vehicle class.",
+        rule_liability: "Liability Reduction",
+        rule_liability_text: "The client has the option to reduce their liability for damages to the car to 0€. For this purpose, an additional fee is applied, determined in accordance with the rental rules, but not less than 20€ per day.",
+        rule_pickup: "Car Pickup and Return",
+        rule_pickup_text: "The car can be picked up and returned in Riga, at Bruninieku 92. By agreement and for an additional fee, return or pickup is possible at another location or time.",
+        rule_admin: "Administrative Violations and Loss of Documents/Keys",
+        rule_admin_text: "The client is fully responsible for all traffic rule violations committed during the rental period. In case of loss of car documents or keys, a compensation of 100€ is applied.",
+        rule_fuel: "Fuel",
+        rule_fuel_text: "The car is provided with a full fuel tank and must be returned with a full one. If the tank is not full, a fee of 2€ per missing liter is applied.",
+        rule_territory: "Territorial Restrictions",
+        rule_territory_text: "The car may be used within the territory of Latvia. Travel outside Latvia, within the European Union borders, is possible only with prior consent of the lessor and an additional fee from 7€ to 10€ per day is applied."
     }
 };
-
 function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
-
 function toggleLanguageDropdown() {
     const dropdown = document.getElementById('languageDropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 }
-
 function selectLanguage(lang) {
     document.getElementById('currentLanguage').textContent = lang;
+    document.documentElement.lang = lang.toLowerCase();
+    document.title = translations[lang].page_title + " - Auto Rental";
+    const elements = document.querySelectorAll('[data-key]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
     toggleLanguageDropdown();
 }
-
 // Инициализация по умолчанию
+selectLanguage('LV');
 </script>
 </body>
 </html>
