@@ -26,6 +26,13 @@ header { background-color:#333; color:white; padding:10px 20px; display:flex; ju
 .language-dropdown a:hover { text-decoration:underline; }
 .content { padding:20px; background-color:white; margin:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
 .content h1 { font-size:22px; margin-bottom:20px; }
+    .content p {
+    text-align: justify;          /* выравнивает текст по ширине */
+    text-justify: inter-word;     /* делает пробелы между словами равномерными */
+    line-height: 1.6;             /* увеличивает расстояние между строками для лучшей читаемости */
+    margin-bottom: 15px;          /* отступ между абзацами */
+}
+
 .content ul { list-style-type:disc; padding-left:20px; margin-bottom:20px; }
 .content li { margin-bottom:10px; }
 footer { background-color:#333; color:white; text-align:center; padding:10px; }
@@ -221,4 +228,5 @@ updateTranslations('LV');
 
 </body>
 </html>
+
 
